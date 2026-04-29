@@ -185,6 +185,18 @@ a {
   background: rgba(73, 210, 255, 0.08);
 }
 
+.btn .bi {
+  margin-right: 0.45rem;
+  vertical-align: -0.1em;
+}
+
+.btn[href*="contacto.html?topic="]:not(:has(.bi))::before {
+  content: "\F32F";
+  margin-right: 0.45rem;
+  font-family: "bootstrap-icons";
+  vertical-align: -0.1em;
+}
+
 .glass-card {
   height: 100%;
   padding: 1.5rem;
