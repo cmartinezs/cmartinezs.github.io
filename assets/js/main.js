@@ -1,11 +1,13 @@
 document.querySelectorAll(".js-email-link").forEach((link) => {
-  const { a, b, c } = link.dataset;
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
 
-  if (!a || !b || !c) {
-    return;
-  }
+    const { a, b, c } = link.dataset;
 
-  const email = `${a}@${b}.${c}`;
-  link.href = `mailto:${email}`;
-  link.setAttribute("aria-label", `Enviar email a ${email}`);
+    if (!a || !b || !c) {
+      return;
+    }
+
+    window.location.href = `mailto:${a}@${b}.${c}`;
+  });
 });
