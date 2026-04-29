@@ -13,6 +13,7 @@ source/
 .openai/
 .copilot/
 .windsurf/
+.github
 
 # AI-generated temporary files
 *.ai.log
