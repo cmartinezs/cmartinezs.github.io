@@ -16,6 +16,7 @@ export const initTerminalCardContext = () => {
 
     const source = lines.map((line) => {
       const segments = [];
+      const role = line.dataset.terminalRole || (line.textContent?.trimStart().startsWith("$") ? "command" : "output");
 
       const collectSegments = (node, className = "") => {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -38,7 +39,7 @@ export const initTerminalCardContext = () => {
         collectSegments(child);
       });
 
-      return { line, segments };
+      return { line, segments, role };
     });
 
     body.setAttribute("aria-label", source.map(({ segments }) => segments.map((segment) => segment.text).join("")).join("\n"));
@@ -69,14 +70,17 @@ export const initTerminalCardContext = () => {
       const item = source[lineIndex];
 
       if (!item) {
-        cursor.remove();
         return;
       }
 
-      const { line, segments } = item;
+      const { line, segments, role } = item;
       let segmentIndex = 0;
       let characterIndex = 0;
       let activeSpan;
+      const isCommand = role === "command";
+      const characterDelay = isCommand ? 34 : 14;
+      const spaceDelay = isCommand ? 18 : 8;
+      const nextLineDelay = isCommand ? 90 : 320;
 
       line.append(cursor);
 
@@ -86,7 +90,7 @@ export const initTerminalCardContext = () => {
         if (!segment) {
           window.setTimeout(() => {
             typeLine(lineIndex + 1);
-          }, 120);
+          }, nextLineDelay);
           return;
         }
 
@@ -115,13 +119,13 @@ export const initTerminalCardContext = () => {
         }
 
         if (segmentIndex < segments.length) {
-          window.setTimeout(typeNextCharacter, character === " " ? 18 : 34);
+          window.setTimeout(typeNextCharacter, character === " " ? spaceDelay : characterDelay);
           return;
         }
 
         window.setTimeout(() => {
           typeLine(lineIndex + 1);
-        }, 120);
+        }, nextLineDelay);
       };
 
       typeNextCharacter();

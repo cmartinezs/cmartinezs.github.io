@@ -444,11 +444,41 @@ a {
 }
 
 .hero-title span {
-  display: block;
+  display: inline;
   color: transparent;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.hero-grid {
+  --bs-gutter-x: 4rem;
+}
+
+.hero-copy {
+  max-width: 40rem;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+}
+
+.hero-side {
+  position: relative;
+  max-width: 34rem;
+  margin-left: auto;
+}
+
+.hero-side::before {
+  content: "";
+  position: absolute;
+  inset: 8% -10% auto 16%;
+  height: 72%;
+  border-radius: 2rem;
+  background: radial-gradient(circle, rgba(73, 210, 255, 0.14), rgba(130, 247, 191, 0.06) 52%, transparent 76%);
+  filter: blur(34px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .page-title {
@@ -520,6 +550,50 @@ a {
   overflow: hidden;
   background: #050b13;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.hero-support-card {
+  margin-top: 1.15rem;
+  padding: 1.3rem;
+  border-color: rgba(73, 210, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(7, 18, 30, 0.96), rgba(7, 18, 30, 0.84)),
+    radial-gradient(circle at top right, rgba(73, 210, 255, 0.12), transparent 42%);
+}
+
+.hero-support-lead {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.hero-signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hero-signal {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.95rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.hero-signal strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.hero-signal span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
 .terminal-top {
@@ -1199,6 +1273,18 @@ footer {
 
   .glass-card {
     padding: 1.25rem;
+  }
+
+  .hero-grid {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  .hero-side {
+    margin-left: 0;
+  }
+
+  .hero-signal-grid {
+    grid-template-columns: 1fr;
   }
 
   .services-carousel-toolbar {

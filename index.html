@@ -54,54 +54,53 @@
     </nav>
 
     <main>
-      <section class="hero d-flex align-items-center" id="inicio">
+      <section class="hero d-flex align-items-center" id="inicio" data-hero>
         <div class="container position-relative z-1">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-              <div class="eyebrow">Software · Formación · IA aplicada</div>
-              <h1 class="hero-title">Construyo software robusto. <span>Ayudo a equipos a crecer.</span></h1>
-              <p class="hero-lead mt-4">
-                Soy ingeniero de software, backend specialist y docente con más de 15 años de experiencia en Java, Spring Boot, arquitectura de software, integración de sistemas y formación técnica.
-              </p>
-              <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+          <div class="row align-items-center g-5 hero-grid">
+            <div class="col-lg-6">
+              <div class="hero-copy">
+              <div class="eyebrow" data-hero-reveal>Software · Formación · IA aplicada</div>
+              <h1 class="hero-title" data-hero-reveal>Construyo software robusto. <span>Ayudo a equipos a crecer.</span></h1>
+              <div class="hero-actions d-flex flex-column flex-sm-row gap-3 mt-4" data-hero-reveal>
                 <a href="contacto.html?topic=colaboracion" class="btn btn-primary-custom btn-lg rounded-pill px-4"><i class="bi bi-chat-dots-fill" aria-hidden="true"></i> Hablemos de tu proyecto</a>
                 <a href="#servicios" class="btn btn-outline-custom btn-lg rounded-pill px-4"><i class="bi bi-compass-fill" aria-hidden="true"></i> Explorar servicios</a>
               </div>
-              <div class="row g-3 mt-4">
-                <div class="col-sm-4">
-                  <div class="glass-card py-3">
-                    <strong class="d-block fs-4">15+</strong>
-                    <span class="text-muted-custom">años construyendo software</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="glass-card py-3">
-                    <strong class="d-block fs-4">Prod</strong>
-                    <span class="text-muted-custom">sistemas productivos reales</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="glass-card py-3">
-                    <strong class="d-block fs-4">Edu</strong>
-                    <span class="text-muted-custom">docencia activa superior</span>
-                  </div>
-                </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="terminal-card">
+            <div class="col-lg-6">
+              <div class="hero-side">
+              <div class="terminal-card" data-hero-terminal data-hero-panel>
                 <div class="terminal-top">
                   <span class="dot dot-red"></span>
                   <span class="dot dot-yellow"></span>
                   <span class="dot dot-green"></span>
                 </div>
                 <div class="terminal-body">
-                  <p><span class="muted">$</span> value --proposal</p>
-                  <p>backend: Java, Spring Boot, APIs REST</p>
-                  <p>architecture: calidad, integración, evolución</p>
-                  <p>teaching: programación y criterio profesional</p>
-                  <p class="mb-0"><span class="muted">result:</span> software mantenible y equipos más fuertes</p>
+                  <p data-terminal-role="command"><span class="muted">$</span> ./mvnw test</p>
+                  <p data-terminal-role="output">[INFO] Java 21 / Spring Boot: 54 tests, 0 failures</p>
+                  <p data-terminal-role="command"><span class="muted">$</span> curl -i -X POST http://localhost:8080/api/orders</p>
+                  <p data-terminal-role="output">HTTP/1.1 201 Created</p>
+                  <p data-terminal-role="command"><span class="muted">$</span> docker compose up -d && git push origin feat/order-flow</p>
+                  <p class="mb-0" data-terminal-role="output">[+] api healthy on :8080 · GitHub Actions CI started</p>
                 </div>
+              </div>
+              <div class="glass-card hero-support-card" data-hero-panel>
+                <p class="hero-support-lead mb-0">Aporto criterio técnico, foco en entrega realista y transferencia clara hacia el equipo.</p>
+                <div class="hero-signal-grid">
+                  <div class="hero-signal">
+                    <strong>15+</strong>
+                    <span>años construyendo software</span>
+                  </div>
+                  <div class="hero-signal">
+                    <strong>Prod</strong>
+                    <span>sistemas productivos reales</span>
+                  </div>
+                  <div class="hero-signal">
+                    <strong>Edu</strong>
+                    <span>docencia activa superior</span>
+                  </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
