@@ -251,25 +251,14 @@
               <span class="eyebrow">Stack tecnológico</span>
               <h2 class="display-heading display-5 mt-3 mb-0">Herramientas para construir productos serios.</h2>
             </div>
-            <div class="col-lg-4">
-              <p class="text-muted-custom mb-0">Tecnologías modernas, probadas y alineadas con sistemas backend escalables.</p>
-            </div>
+            <div class="col-lg-4"></div>
           </div>
           <div class="stack-showcase" data-stack>
             <div class="stack-browser glass-card">
               <div class="stack-browser-header">
                 <div class="stack-browser-copy">
                   <span class="eyebrow">Explorar stack</span>
-                  <h3 class="display-heading h2 mt-3 mb-2">Categorías que agrupan la base técnica.</h3>
                   <p class="text-muted-custom mb-0">Haz click en una categoría para traer sus tecnologías con una transición dedicada.</p>
-                </div>
-                <div class="stack-browser-controls" role="group" aria-label="Controles del carrusel de categorías">
-                  <button class="stack-browser-control" type="button" data-stack-prev aria-label="Ver categoría anterior">
-                    <i class="bi bi-arrow-left" aria-hidden="true"></i>
-                  </button>
-                  <button class="stack-browser-control" type="button" data-stack-next aria-label="Ver categoría siguiente">
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                  </button>
                 </div>
               </div>
               <div class="stack-categories-viewport" data-stack-category-viewport>
@@ -295,6 +284,20 @@
                     <small>Deploy, CI/CD y operación</small>
                   </button>
                 </div>
+              </div>
+              <div class="stack-browser-controls" role="group" aria-label="Controles del carrusel de categorías">
+                <button class="stack-browser-control" type="button" data-stack-first aria-label="Ir a la primera categoría">
+                  <i class="bi bi-chevron-double-left" aria-hidden="true"></i>
+                </button>
+                <button class="stack-browser-control" type="button" data-stack-prev aria-label="Ver categoría anterior">
+                  <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button class="stack-browser-control" type="button" data-stack-next aria-label="Ver categoría siguiente">
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+                <button class="stack-browser-control" type="button" data-stack-last aria-label="Ir a la última categoría">
+                  <i class="bi bi-chevron-double-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
             <div class="stack-panel glass-card">
@@ -408,6 +411,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
