@@ -34,6 +34,24 @@
   box-sizing: border-box;
 }
 
+/* ─── Container ──────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .container { padding-inline: 1rem; }
+}
+
+/* ─── Heading size utilities ─────────────────────────────────────────────── */
+.h3 { font-size: 1.75rem; font-weight: 700; line-height: 1.2; margin: 0; }
+.h4 { font-size: 1.5rem;  font-weight: 700; line-height: 1.2; margin: 0; }
+.h5 { font-size: 1.25rem; font-weight: 700; line-height: 1.2; margin: 0; }
+.display-5 { font-size: 3rem; }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
@@ -387,6 +405,21 @@ body.page-certificaciones::before {
 }
 
 /* ─── Buttons ────────────────────────────────────────────────────────────── */
+.btn-primary-custom,
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .btn-primary-custom {
   color: #04111f;
   background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -857,23 +890,30 @@ body.page-certificaciones::before {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ─── Contact form ───────────────────────────────────────────────────────── */
-.contact-form .form-label {
+/* ─── Forms ──────────────────────────────────────────────────────────────── */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
   color: var(--text);
   font-weight: 700;
 }
 
-.contact-form .form-control,
-.contact-form .form-select {
+.form-control,
+.form-select {
+  display: block;
+  width: 100%;
   color: var(--text);
   border: 1px solid var(--panel-border);
   background-color: rgba(5, 11, 19, 0.72);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.contact-form .form-control:focus,
-.contact-form .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   color: var(--text);
   border-color: rgba(73, 210, 255, 0.7);
   background-color: rgba(5, 11, 19, 0.9);
@@ -881,15 +921,16 @@ body.page-certificaciones::before {
   outline: none;
 }
 
-.contact-form .form-control::placeholder {
+.form-control::placeholder {
   color: rgba(170, 184, 207, 0.7);
 }
 
-.contact-form .form-select {
+.form-select {
   background-color: #0b1628;
+  appearance: auto;
 }
 
-.contact-form .form-select option {
+.form-select option {
   color: var(--text);
   background-color: #0b1628;
 }
@@ -897,6 +938,10 @@ body.page-certificaciones::before {
 .form-note {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.text-danger {
+  color: #f87171;
 }
 
 /* ─── Scroll top button ──────────────────────────────────────────────────── */

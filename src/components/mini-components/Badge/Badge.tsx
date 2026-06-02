@@ -11,7 +11,7 @@ export function Badge({ children, variant = "soft", className }: BadgeProps) {
     <span
       className={cn(
         "badge-soft",
-        variant === "pill" && "rounded-pill px-3 py-2",
+        variant === "pill" && "rounded-full px-3 py-2",
         className
       )}
     >

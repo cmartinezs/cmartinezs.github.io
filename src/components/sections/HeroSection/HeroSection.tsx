@@ -12,10 +12,10 @@ export function HeroSection() {
   const { shouldAnimate } = useHeroAnimation();
 
   return (
-    <section className="hero d-flex align-items-center" id="inicio">
-      <div className="container position-relative z-1">
-        <div className="row align-items-center g-5" style={{ "--bs-gutter-x": "4rem" } as React.CSSProperties}>
-          <div className="col-lg-6">
+    <section className="hero flex items-center" id="inicio">
+      <div className="container relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
             <div className="hero-copy">
               {shouldAnimate ? (
                 <>
@@ -28,8 +28,7 @@ export function HeroSection() {
                   </motion.h1>
                   <motion.div
                     variants={staggerFadeUp}
-                    className="d-flex flex-column flex-sm-row gap-3 mt-4"
-                    style={{ flexWrap: "wrap" }}
+                    className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6"
                   >
                     <HeroActions />
                   </motion.div>
@@ -40,7 +39,7 @@ export function HeroSection() {
                   <h1 className="hero-title">
                     Construyo software robusto. <span>Ayudo a equipos a crecer.</span>
                   </h1>
-                  <div className="d-flex flex-column flex-sm-row gap-3 mt-4" style={{ flexWrap: "wrap" }}>
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6">
                     <HeroActions />
                   </div>
                 </>
@@ -48,7 +47,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="col-lg-6">
+          <div>
             <div className="hero-side">
               <GlowEffect />
               {shouldAnimate ? (
@@ -90,13 +89,13 @@ function HeroActions() {
     <>
       <Link
         href="/contacto/?topic=colaboracion"
-        className="btn btn-primary-custom btn-lg rounded-pill px-4"
+        className="btn-primary-custom"
       >
         <i className="bi bi-chat-dots-fill" aria-hidden="true" /> Hablemos de tu proyecto
       </Link>
       <Link
         href="#servicios"
-        className="btn btn-outline-custom btn-lg rounded-pill px-4"
+        className="btn-outline-custom"
       >
         <i className="bi bi-compass-fill" aria-hidden="true" /> Explorar servicios
       </Link>

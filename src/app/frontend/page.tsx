@@ -28,8 +28,8 @@ export default function FrontendPage() {
 
         <section className="section" id="enfoque">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-md-4">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">UI</span>
                   <h2 className="h4">Producto antes que decoración</h2>
@@ -39,7 +39,7 @@ export default function FrontendPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">UX</span>
                   <h2 className="h4">Entregables concretos</h2>
@@ -50,7 +50,7 @@ export default function FrontendPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">API</span>
                   <h2 className="h4">Integración real</h2>

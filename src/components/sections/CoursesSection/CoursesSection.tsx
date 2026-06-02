@@ -16,10 +16,10 @@ export function CoursesSection() {
               asignatura.
             </p>
           </div>
-          <div className="row g-4">
+          <div className="grid md:grid-cols-2 gap-6">
             {courses.map((course) => (
-              <div key={course.id} className="col-md-6">
-                <GlassCard as="article" className="h-100">
+              <div key={course.id}>
+                <GlassCard as="article" className="h-full">
                   <Badge variant="pill" className="mb-3">
                     {course.code}
                   </Badge>
@@ -56,10 +56,10 @@ export function CoursesSection() {
               interfaces, física, gráficos y mecánicas interactivas.
             </p>
           </div>
-          <div className="row g-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {gameProjects.map((game) => (
-              <div key={game.id} className="col-sm-6 col-lg-3">
-                <GlassCard as="article" className="h-100">
+              <div key={game.id}>
+                <GlassCard as="article" className="h-full">
                   <span className="service-icon">{game.icon}</span>
                   <h3 className="h5">{game.title}</h3>
                   <p className="text-muted-custom">{game.description}</p>

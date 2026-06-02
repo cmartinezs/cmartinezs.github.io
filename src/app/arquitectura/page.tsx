@@ -28,8 +28,8 @@ export default function ArquitecturaPage() {
 
         <section className="section" id="servicios">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-md-6 col-lg-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Diseño de soluciones</h2>
                   <p className="text-muted-custom">
@@ -38,7 +38,7 @@ export default function ArquitecturaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-6 col-lg-4">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Clean Architecture</h2>
                   <p className="text-muted-custom">
@@ -47,7 +47,7 @@ export default function ArquitecturaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-6 col-lg-4">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Calidad y pruebas</h2>
                   <p className="text-muted-custom">

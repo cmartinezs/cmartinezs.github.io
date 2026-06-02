@@ -14,8 +14,8 @@ function ContactoInner() {
     <PageWrapper pageClass="page-contacto">
       <section className="page-hero" id="inicio">
         <div className="container">
-          <div className="row g-5 align-items-start">
-            <div className="col-lg-5" id="canales">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5" id="canales">
               <span className="eyebrow">Contacto</span>
               <h1 className="page-title mt-3">
                 Cuéntame qué quieres construir, mejorar o enseñar.
@@ -24,7 +24,7 @@ function ContactoInner() {
                 Si necesitas construir una API, mejorar una arquitectura, crear una landing,
                 formar a un equipo o explorar IA aplicada, conversemos.
               </p>
-              <div className="d-grid gap-2 mt-3">
+              <div className="grid gap-2 mt-4">
                 <SocialButton
                   href="https://github.com/cmartinezs"
                   icon="bi-github"
@@ -38,7 +38,7 @@ function ContactoInner() {
                 />
               </div>
             </div>
-            <div className="col-lg-7" id="formulario">
+            <div className="lg:col-span-7" id="formulario">
               <div className="glass-card">
                 <ContactForm initialTopic={topic} />
               </div>

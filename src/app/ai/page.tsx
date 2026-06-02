@@ -28,8 +28,8 @@ export default function AIPage() {
 
         <section className="section" id="aplicaciones">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-lg-4">
+            <div className="grid lg:grid-cols-3 gap-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Casos de uso</h2>
                   <p className="text-muted-custom">
@@ -38,7 +38,7 @@ export default function AIPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-lg-4">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Productividad</h2>
                   <p className="text-muted-custom">
@@ -47,7 +47,7 @@ export default function AIPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-lg-4">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Criterio humano</h2>
                   <p className="text-muted-custom">

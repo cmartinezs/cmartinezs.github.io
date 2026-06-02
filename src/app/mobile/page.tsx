@@ -28,8 +28,8 @@ export default function MobilePage() {
 
         <section className="section" id="enfoque">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-md-4">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">
                     <i className="devicon-ionic-original" />
@@ -41,7 +41,7 @@ export default function MobilePage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">
                     <i className="devicon-kotlin-plain" />
@@ -53,7 +53,7 @@ export default function MobilePage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">API</span>
                   <h2 className="h4">Integración</h2>

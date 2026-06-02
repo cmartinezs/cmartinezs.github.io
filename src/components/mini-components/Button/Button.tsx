@@ -28,9 +28,7 @@ export function Button({
   ariaLabel,
 }: ButtonProps) {
   const baseClass = cn(
-    "btn rounded-pill px-4",
     variant === "primary" ? "btn-primary-custom" : "btn-outline-custom",
-    size === "lg" && "btn-lg",
     className
   );
 

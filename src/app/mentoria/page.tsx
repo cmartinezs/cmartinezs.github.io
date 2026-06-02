@@ -28,8 +28,8 @@ export default function MentoriaPage() {
 
         <section className="section" id="areas">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-md-6 col-lg-3">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Java y Spring Boot</h2>
                   <p className="text-muted-custom">
@@ -37,7 +37,7 @@ export default function MentoriaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-6 col-lg-3">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Frontend y mobile</h2>
                   <p className="text-muted-custom">
@@ -46,7 +46,7 @@ export default function MentoriaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-6 col-lg-3">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Calidad y pruebas</h2>
                   <p className="text-muted-custom">
@@ -55,7 +55,7 @@ export default function MentoriaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-6 col-lg-3">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h4">Entrevistas</h2>
                   <p className="text-muted-custom">

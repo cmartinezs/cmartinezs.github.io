@@ -3,77 +3,108 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navPages } from "@/data/navigation.data";
+import { navPages, pageAnchors } from "@/data/navigation.data";
 import { cn } from "@/lib/cn";
 import styles from "./Navbar.module.css";
 
 export function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [explorarOpen, setExplorarOpen] = useState(false);
+
+  const sectionLinks = pageAnchors[pathname] ?? [];
+  const close = () => { setMobileOpen(false); setExplorarOpen(false); };
 
   return (
-    <nav className={`${styles.navbar} navbar navbar-expand-lg fixed-top`}>
-      <div className="container">
-        <Link className="navbar-brand" href="/" style={{ fontWeight: 800, letterSpacing: "-0.04em" }}>
+    <nav className={cn(styles.nav, "fixed top-0 inset-x-0 z-50")}>
+      <div className={styles.inner}>
+        <Link href="/" className={styles.brand} onClick={close}>
           Carlos Martínez
         </Link>
 
-        <button
-          className="navbar-toggler border-0"
-          type="button"
-          aria-label="Abrir navegación"
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+        {/* Desktop nav */}
+        <div className={styles.desktopNav}>
+          {sectionLinks.map((link) => (
+            <a key={link.href} href={link.href} className={styles.link}>
+              {link.label}
+            </a>
+          ))}
 
-        <div className={cn("collapse navbar-collapse", open && "show")}>
-          <ul className="navbar-nav ms-auto gap-lg-3">
-            <li className="nav-item">
-              <Link
-                className={cn("nav-link", pathname === "/" && "active")}
-                href="/"
-                style={{ color: "var(--muted)", fontWeight: 500 }}
-                onClick={() => setOpen(false)}
-              >
-                Inicio
-              </Link>
-            </li>
-
-            <li className="nav-item dropdown">
-              <button
-                className={cn(
-                  "nav-link dropdown-toggle",
-                  styles.dropdownToggle,
-                  navPages.some((p) => p.href !== "/" && pathname.startsWith(p.href)) && "active"
-                )}
-                type="button"
-                aria-expanded="false"
-                style={{ color: "var(--muted)", fontWeight: 500, background: "none", border: 0 }}
-              >
-                Explorar
-              </button>
-              <ul className={cn("dropdown-menu dropdown-menu-dark dropdown-menu-end", styles.dropdownMenu)}>
+          <div
+            className={styles.explorarWrapper}
+            onMouseLeave={() => setExplorarOpen(false)}
+          >
+            <button
+              className={styles.link}
+              onClick={() => setExplorarOpen(!explorarOpen)}
+              aria-expanded={explorarOpen}
+            >
+              Explorar ▾
+            </button>
+            {explorarOpen && (
+              <div className={styles.dropdown}>
                 {navPages.map((page) => (
-                  <li key={page.href}>
-                    <Link
-                      className={cn(
-                        "dropdown-item",
-                        pathname === page.href && "active"
-                      )}
-                      href={page.href}
-                      onClick={() => setOpen(false)}
-                    >
-                      {page.label}
-                    </Link>
-                  </li>
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className={cn(
+                      styles.dropdownItem,
+                      pathname === page.href && styles.dropdownItemActive
+                    )}
+                    onClick={close}
+                  >
+                    {page.label}
+                  </Link>
                 ))}
-              </ul>
-            </li>
-          </ul>
+              </div>
+            )}
+          </div>
         </div>
+
+        {/* Hamburger */}
+        <button
+          className={styles.hamburger}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Abrir navegación"
+          aria-expanded={mobileOpen}
+        >
+          <span className={cn(styles.hamburgerLine, mobileOpen && styles.open)} />
+          <span className={cn(styles.hamburgerLine, mobileOpen && styles.open)} />
+          <span className={cn(styles.hamburgerLine, mobileOpen && styles.open)} />
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className={styles.mobileMenu}>
+          {sectionLinks.length > 0 && (
+            <>
+              <span className={styles.mobileSectionLabel}>Secciones</span>
+              {sectionLinks.map((link) => (
+                <a key={link.href} href={link.href} className={styles.mobileLink} onClick={close}>
+                  {link.label}
+                </a>
+              ))}
+              <hr className={styles.mobileDivider} />
+            </>
+          )}
+          <span className={styles.mobileSectionLabel}>Explorar</span>
+          {navPages.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className={cn(
+                styles.mobileLink,
+                styles.mobileSub,
+                pathname === page.href && styles.dropdownItemActive
+              )}
+              onClick={close}
+            >
+              {page.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

@@ -13,8 +13,8 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
 
   return (
     <div className="contact-form">
-      <div className="row g-3">
-        <div className="col-sm-6">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
           <ContactFormField id="name" label="Nombre">
             <input
               id="name"
@@ -26,11 +26,11 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
               onChange={handleChange}
               required
             />
-            {errors["name"] && <div className="form-note text-danger mt-1">{errors["name"]}</div>}
+            {errors["name"] && <div className="form-note text-danger mt-2">{errors["name"]}</div>}
           </ContactFormField>
         </div>
 
-        <div className="col-sm-6">
+        <div>
           <ContactFormField id="email" label="Email">
             <input
               id="email"
@@ -48,7 +48,7 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
           </ContactFormField>
         </div>
 
-        <div className="col-12">
+        <div className="sm:col-span-2">
           <ContactFormField id="topic" label="Tema">
             <select
               id="topic"
@@ -73,7 +73,7 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
           </ContactFormField>
         </div>
 
-        <div className="col-12">
+        <div className="sm:col-span-2">
           <ContactFormField id="message" label="Mensaje">
             <textarea
               id="message"
@@ -91,24 +91,24 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
           </ContactFormField>
         </div>
 
-        <div className="col-12">
-          <div className="d-flex flex-column flex-sm-row gap-2">
+        <div className="sm:col-span-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <button
               type="button"
-              className="btn btn-primary-custom rounded-pill px-4"
+              className="btn-primary-custom"
               onClick={() => submit("mailto")}
             >
               <i className="bi bi-envelope-fill" aria-hidden="true" /> Enviar por email
             </button>
             <button
               type="button"
-              className="btn btn-outline-custom rounded-pill px-4"
+              className="btn-outline-custom"
               onClick={() => submit("gmail")}
             >
               <i className="bi bi-google" aria-hidden="true" /> Abrir en Gmail
             </button>
           </div>
-          <p className="form-note mt-2">
+          <p className="form-note mt-3">
             El email no está expuesto en el HTML, se reconstruye al hacer click.
           </p>
         </div>

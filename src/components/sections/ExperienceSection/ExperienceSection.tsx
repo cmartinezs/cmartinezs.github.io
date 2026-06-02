@@ -17,9 +17,9 @@ export function ExperienceSection() {
             sensibles.
           </p>
         </div>
-        <div className="row g-4">
+        <div className="grid lg:grid-cols-2 gap-6">
           {experienceItems.map((item) => (
-            <div key={item.id} className="col-lg-6">
+            <div key={item.id}>
               <GlassCard as="article">
                 <Badge variant="pill" className="mb-3">
                   {item.badge}

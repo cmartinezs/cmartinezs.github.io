@@ -13,11 +13,7 @@ export function SocialButton({ href, icon, label, size = "lg", className }: Soci
   return (
     <Link
       href={href}
-      className={cn(
-        "btn btn-outline-custom rounded-pill",
-        size === "lg" && "btn-lg",
-        className
-      )}
+      className={cn("btn-outline-custom", className)}
       target="_blank"
       rel="noopener noreferrer"
     >

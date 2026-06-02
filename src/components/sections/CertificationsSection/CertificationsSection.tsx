@@ -16,9 +16,9 @@ export function CertificationsSection() {
               Certificaciones que respaldan liderazgo y base técnica.
             </h2>
           </div>
-          <div className="row g-4">
+          <div className="grid lg:grid-cols-3 gap-6">
             {featuredCertifications.map((cert) => (
-              <div key={cert.id} className="col-lg-4">
+              <div key={cert.id}>
                 <GlassCard as="article">
                   <span className="service-icon">{cert.year.slice(-2)}</span>
                   <h3 className="h4">{cert.title}</h3>
@@ -32,8 +32,8 @@ export function CertificationsSection() {
 
       <section className="section" id="formacion">
         <div className="container">
-          <div className="row g-4">
-            <div className="col-lg-6">
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div>
               <GlassCard as="article">
                 <h2 className="h3">Cursos técnicos</h2>
                 <ul className="feature-list mt-3">
@@ -43,7 +43,7 @@ export function CertificationsSection() {
                 </ul>
               </GlassCard>
             </div>
-            <div className="col-lg-6">
+            <div>
               <GlassCard as="article">
                 <h2 className="h3">Aprendizaje complementario</h2>
                 <p className="text-muted-custom">

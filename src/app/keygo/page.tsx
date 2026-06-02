@@ -35,8 +35,8 @@ export default function KeyGoPage() {
 
         <section className="section">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-lg-6">
+            <div className="grid lg:grid-cols-2 gap-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h3">Problema que busca resolver</h2>
                   <p className="text-muted-custom">
@@ -45,7 +45,7 @@ export default function KeyGoPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-lg-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h3">Público objetivo</h2>
                   <p className="text-muted-custom">
@@ -62,7 +62,7 @@ export default function KeyGoPage() {
           <div className="container">
             <div className="section-title">
               <span className="eyebrow">Roadmap</span>
-              <h2 className="display-heading display-5 mt-3">Próximos hitos del proyecto.</h2>
+              <h2 className="display-heading display-5 mt-4">Próximos hitos del proyecto.</h2>
             </div>
             <ul className="feature-list">
               {roadmapItems.map((item) => (
@@ -74,10 +74,10 @@ export default function KeyGoPage() {
 
         <section className="section" id="aprendizajes">
           <div className="container">
-            <div className="cta p-4 p-lg-5">
+            <div className="cta p-6 lg:p-12">
               <span className="eyebrow">Aprendizajes</span>
-              <h2 className="display-heading display-5 mt-3">Construcción pública y criterio técnico.</h2>
-              <p className="text-muted-custom fs-5 mb-0">
+              <h2 className="display-heading display-5 mt-4">Construcción pública y criterio técnico.</h2>
+              <p className="text-muted-custom text-lg mb-0">
                 KeyGo también será un espacio para documentar decisiones de arquitectura,
                 trade-offs, errores, aprendizajes y evolución técnica de una plataforma SaaS.
               </p>

@@ -29,8 +29,8 @@ export default function DocenciaPage() {
 
         <section className="section" id="metodo">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-md-4">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">01</span>
                   <h2 className="h4">Método práctico</h2>
@@ -40,7 +40,7 @@ export default function DocenciaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">02</span>
                   <h2 className="h4">Públicos</h2>
@@ -50,7 +50,7 @@ export default function DocenciaPage() {
                   </p>
                 </GlassCard>
               </div>
-              <div className="col-md-4">
+              <div>
                 <GlassCard as="article">
                   <span className="service-icon">03</span>
                   <h2 className="h4">Contenidos</h2>

@@ -28,8 +28,8 @@ export default function BackendPage() {
 
         <section className="section" id="arquitectura">
           <div className="container">
-            <div className="row g-4">
-              <div className="col-lg-6">
+            <div className="grid lg:grid-cols-2 gap-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h3">Bloques técnicos</h2>
                   <ul className="feature-list mt-3">
@@ -52,7 +52,7 @@ export default function BackendPage() {
                   </ul>
                 </GlassCard>
               </div>
-              <div className="col-lg-6">
+              <div>
                 <GlassCard as="article">
                   <h2 className="h3">Problemas que puedo resolver</h2>
                   <ul className="feature-list mt-3">
