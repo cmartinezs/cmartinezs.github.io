@@ -1,4 +1,4 @@
-import type { CertificationItem } from "@/types/experience.types";
+import type { CertificationItem, TechnicalCourse } from "@/types/experience.types";
 
 export const featuredCertifications: CertificationItem[] = [
   {
@@ -72,13 +72,53 @@ export const featuredCertifications: CertificationItem[] = [
   },
 ];
 
-export const technicalCourses: string[] = [
-  "Programando con Java para aplicaciones Android.",
-  "Java Fundamentals, Sonda Training.",
-  "Desarrollo de Sistemas utilizando Spring, Track IT.",
-  "Uso Efectivo de Java Server Faces, Track IT.",
-  "Desarrollo de Aplicaciones Java Server Pages, Track IT.",
-  "Modelado de Requisitos del Sistema, everis Training.",
+export const technicalCourses: TechnicalCourse[] = [
+  {
+    id: "java-fundamentals",
+    title: "Java Fundamentals",
+    issuer: "Sonda Training",
+    year: "2017",
+    hours: "40",
+    imageUrl: "/certificados/java-fundamentals-sonda-2017.png",
+  },
+  {
+    id: "desarrollo-spring",
+    title: "Desarrollo de Sistemas utilizando Spring",
+    issuer: "Track IT",
+    year: "2011",
+    hours: "24",
+    imageUrl: "/certificados/desarrollo-spring-trackit-2011.png",
+  },
+  {
+    id: "java-server-faces",
+    title: "Uso Efectivo de Java Server Faces",
+    issuer: "Track IT",
+    year: "2011",
+    hours: "24",
+    imageUrl: "/certificados/java-server-faces-trackit-2011.png",
+  },
+  {
+    id: "java-server-pages",
+    title: "Desarrollo de Aplicaciones Java Server Pages",
+    issuer: "Track IT",
+    year: "2011",
+    hours: "24",
+    imageUrl: "/certificados/java-server-pages-trackit-2011.png",
+  },
+  {
+    id: "modelado-requisitos",
+    title: "BpE-Modelado de Requisitos del Sistema",
+    issuer: "everis Training",
+    year: "2014",
+    hours: "8",
+    imageUrl: "/certificados/modelado-requisitos-everis-2014.png",
+  },
+  {
+    id: "java-android",
+    title: "Programando con Java para aplicaciones Android",
+    issuer: "Udemy",
+    year: "2023",
+  },
 ];
 
 export const complementaryLearning: string[] = [

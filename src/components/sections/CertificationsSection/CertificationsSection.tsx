@@ -1,9 +1,7 @@
 import { GlassCard } from "@/components/sub-components/GlassCard";
 import { CertificationsTimeline } from "./CertificationsTimeline";
-import {
-  technicalCourses,
-  complementaryLearning,
-} from "@/data/certifications.data";
+import { TechnicalCoursesGrid } from "./TechnicalCoursesGrid";
+import { complementaryLearning } from "@/data/certifications.data";
 
 export function CertificationsSection() {
   return (
@@ -22,31 +20,28 @@ export function CertificationsSection() {
 
       <section className="section" id="formacion">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div>
-              <GlassCard as="article">
-                <h2 className="h3">Cursos técnicos</h2>
-                <ul className="feature-list mt-3">
-                  {technicalCourses.map((course) => (
-                    <li key={course}>{course}</li>
-                  ))}
-                </ul>
-              </GlassCard>
-            </div>
-            <div>
-              <GlassCard as="article">
-                <h2 className="h3">Aprendizaje complementario</h2>
-                <p className="text-muted-custom">
-                  Además de certificaciones técnicas, mantengo formación complementaria en inglés y
-                  práctica continua en frontend/mobile con Angular, Ionic y Kotlin.
-                </p>
-                <ul className="feature-list mt-3">
-                  {complementaryLearning.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </GlassCard>
-            </div>
+          <div className="section-title">
+            <span className="eyebrow">Formación técnica</span>
+            <h2 className="display-heading display-5 mt-3">
+              Cursos técnicos certificados.
+            </h2>
+          </div>
+
+          <TechnicalCoursesGrid />
+
+          <div className="mt-8">
+            <GlassCard as="article">
+              <h2 className="h3">Aprendizaje complementario</h2>
+              <p className="text-muted-custom mt-2">
+                Además de certificaciones técnicas, mantengo formación complementaria en inglés y
+                práctica continua en frontend/mobile con Angular, Ionic y Kotlin.
+              </p>
+              <ul className="feature-list mt-3">
+                {complementaryLearning.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </GlassCard>
           </div>
         </div>
       </section>

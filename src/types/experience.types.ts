@@ -9,6 +9,15 @@ export interface ExperienceItem {
   learning: string;
 }
 
+export interface TechnicalCourse {
+  id: string;
+  title: string;
+  issuer: string;
+  year: string;
+  hours?: string;
+  imageUrl?: string;
+}
+
 export interface CertificationItem {
   id: string;
   title: string;
