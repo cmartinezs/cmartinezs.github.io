@@ -52,8 +52,8 @@
             <div class="col-lg-5" id="canales">
               <span class="eyebrow">Contacto</span>
               <h1 class="page-title mt-3">Cuéntame qué quieres construir, mejorar o enseñar.</h1>
-              <p class="hero-lead mt-4">Si necesitas construir una API, mejorar una arquitectura, crear una landing, formar a un equipo o explorar IA aplicada, conversemos.</p>
-              <div class="d-grid gap-3 mt-4">
+              <p class="hero-lead mt-2">Si necesitas construir una API, mejorar una arquitectura, crear una landing, formar a un equipo o explorar IA aplicada, conversemos.</p>
+              <div class="d-grid gap-2 mt-3">
                 <a class="btn btn-primary-custom btn-lg rounded-pill" href="https://github.com/cmartinezs" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
                 <a class="btn btn-outline-custom btn-lg rounded-pill" href="https://www.linkedin.com/in/cfms" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
                 <a class="btn btn-outline-custom btn-lg rounded-pill js-email-link" href="#" data-a="carlos.f.martinez.s" data-b="gmail" data-c="com"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Email directo</a>
@@ -91,11 +91,14 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="message">Mensaje</label>
-                    <textarea class="form-control" id="message" name="message" rows="6" placeholder="Cuéntame brevemente qué necesitas, en qué etapa estás y qué resultado esperas conseguir." required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Cuéntame brevemente qué necesitas, en qué etapa estás y qué resultado esperas conseguir." required></textarea>
                   </div>
                   <div class="col-12">
-                    <button class="btn btn-primary-custom btn-lg rounded-pill px-4" type="submit"><i class="bi bi-send-fill" aria-hidden="true"></i> Enviar mensaje</button>
-                    <p class="form-note mt-3 mb-0">El formulario abre tu cliente de correo y genera el mensaje en ese momento, sin publicar el email en claro.</p>
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                      <button class="btn btn-primary-custom btn-lg rounded-pill px-4" type="submit"><i class="bi bi-send-fill" aria-hidden="true"></i> Enviar mensaje</button>
+                      <button class="btn btn-outline-custom btn-lg rounded-pill px-4 js-gmail-btn" type="button"><i class="bi bi-google" aria-hidden="true"></i> Enviar con Gmail</button>
+                    </div>
+                    <p class="form-note mt-3 mb-0">Ambos botones generan el mensaje en ese momento, sin publicar el email en claro. Gmail abre en una pestaña nueva.</p>
                   </div>
                 </div>
               </form>

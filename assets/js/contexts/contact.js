@@ -51,5 +51,32 @@ export const initContactContext = () => {
 
       window.location.href = `mailto:${address}?subject=${subject}&body=${body}`;
     });
+
+    form.querySelectorAll(".js-gmail-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const address = getMailAddress(form);
+
+        if (!address) {
+          return;
+        }
+
+        const data = new FormData(form);
+        const name = data.get("name") || "";
+        const replyTo = data.get("replyTo") || "";
+        const topicValue = data.get("topic") || "";
+        const selectedTopic = topicSelect?.selectedOptions[0]?.text || topicValue || "Consulta";
+        const message = data.get("message") || "";
+        const subject = encodeURIComponent(`Contacto web: ${selectedTopic}`);
+        const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${replyTo}\nTema: ${selectedTopic}\n\nMensaje:\n${message}`);
+
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(address)}&su=${subject}&body=${body}`;
+
+        window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      });
+    });
   });
 };
