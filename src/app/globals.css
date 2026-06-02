@@ -39,7 +39,7 @@ html {
   scroll-padding-top: 5.5rem;
 }
 
-body {
+html body {
   margin: 0;
   font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--text);
