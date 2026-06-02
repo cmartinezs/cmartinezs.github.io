@@ -1,0 +1,21 @@
+.glow {
+  position: absolute;
+  inset: 8% -10% auto 16%;
+  height: 72%;
+  border-radius: 2rem;
+  filter: blur(34px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glow--primary {
+  background: radial-gradient(circle, rgba(73, 210, 255, 0.14), rgba(130, 247, 191, 0.06) 52%, transparent 76%);
+}
+
+.glow--accent {
+  background: radial-gradient(circle, rgba(130, 247, 191, 0.18), rgba(73, 210, 255, 0.06) 52%, transparent 76%);
+}
+
+.glow--warning {
+  background: radial-gradient(circle, rgba(255, 209, 102, 0.14), transparent 60%);
+}

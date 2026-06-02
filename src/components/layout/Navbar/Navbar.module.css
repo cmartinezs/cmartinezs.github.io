@@ -1,0 +1,15 @@
+.navbar {
+  background: rgba(8, 17, 31, 0.82);
+  border-bottom: 1px solid var(--panel-border);
+  backdrop-filter: blur(16px);
+}
+
+.dropdownMenu {
+  border: 1px solid var(--panel-border);
+  background: rgba(8, 17, 31, 0.96);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+}
+
+.dropdownToggle {
+  cursor: pointer;
+}
