@@ -1,6 +1,6 @@
 import { GlassCard } from "@/components/sub-components/GlassCard";
+import { CertificationsTimeline } from "./CertificationsTimeline";
 import {
-  featuredCertifications,
   technicalCourses,
   complementaryLearning,
 } from "@/data/certifications.data";
@@ -16,17 +16,7 @@ export function CertificationsSection() {
               Certificaciones que respaldan liderazgo y base técnica.
             </h2>
           </div>
-          <div className="grid lg:grid-cols-3 gap-6">
-            {featuredCertifications.map((cert) => (
-              <div key={cert.id}>
-                <GlassCard as="article">
-                  <span className="service-icon">{cert.year.slice(-2)}</span>
-                  <h3 className="h4">{cert.title}</h3>
-                  <p className="text-muted-custom">{cert.description}</p>
-                </GlassCard>
-              </div>
-            ))}
-          </div>
+          <CertificationsTimeline />
         </div>
       </section>
 

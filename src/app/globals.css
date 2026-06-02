@@ -507,6 +507,139 @@ body.page-certificaciones::before {
   vertical-align: -0.16em;
 }
 
+/* ─── Experience timeline ─────────────────────────────────────────────────── */
+.experience-timeline {
+  height: 65vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--panel-border) transparent;
+}
+
+.experience-timeline::-webkit-scrollbar {
+  width: 5px;
+}
+
+.experience-timeline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experience-timeline::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 3px;
+}
+
+@media (max-width: 767.98px) {
+  .experience-timeline {
+    height: auto;
+    max-height: 75vh;
+  }
+}
+
+/* ─── Certifications timeline ─────────────────────────────────────────────── */
+.cert-timeline {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.cert-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--panel-border);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.cert-item {
+  display: grid;
+  grid-template-columns: 1fr 48px 1fr;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.cert-badge {
+  padding: 0.5rem 1.5rem;
+}
+
+.cert-badge a {
+  display: block;
+}
+
+.cert-badge a:hover img {
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.cert-dot-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-dot-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(130, 247, 191, 0.5);
+  flex-shrink: 0;
+}
+
+.cert-text {
+  padding: 1.25rem 1.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .cert-timeline::before {
+    left: 19px;
+    transform: none;
+  }
+
+  .cert-item {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+    margin-bottom: 2rem;
+  }
+
+  .cert-badge {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    padding: 0.5rem 0;
+  }
+
+  .cert-dot-col {
+    grid-column: 1;
+    grid-row: 2;
+    align-items: flex-start;
+    padding-top: 0.4rem;
+  }
+
+  .cert-text {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Override even/odd HTML order for mobile */
+  .cert-odd .cert-text {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .cert-odd .cert-dot-col {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .cert-odd .cert-badge {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+}
+
 .terminal-body .muted {
   color: #7f8da3;
 }

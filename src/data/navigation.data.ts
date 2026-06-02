@@ -16,6 +16,7 @@ export const navPages: NavPage[] = [
   { label: "Arquitectura", href: "/arquitectura/" },
   { label: "Experiencia", href: "/experiencia/" },
   { label: "Docencia", href: "/docencia/" },
+  { label: "Videojuegos", href: "/videojuegos/" },
   { label: "Mentoría", href: "/mentoria/" },
   { label: "AI", href: "/ai/" },
   { label: "Certificaciones", href: "/certificaciones/" },
@@ -27,6 +28,7 @@ export const navPages: NavPage[] = [
 export const pageAnchors: Record<string, NavAnchor[]> = {
   "/": [
     { href: "#inicio", label: "Inicio" },
+    { href: "#experiencia", label: "Experiencia" },
     { href: "#servicios", label: "Servicios" },
     { href: "#confianza", label: "Confianza" },
     { href: "#keygo", label: "KeyGo" },
@@ -63,7 +65,11 @@ export const pageAnchors: Record<string, NavAnchor[]> = {
     { href: "#inicio", label: "Inicio" },
     { href: "#metodo", label: "Método" },
     { href: "#cursos", label: "Cursos" },
-    { href: "#videojuegos", label: "Videojuegos" },
+    { href: "#contacto", label: "Contacto" },
+  ],
+  "/videojuegos/": [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#proyectos", label: "Proyectos" },
     { href: "#contacto", label: "Contacto" },
   ],
   "/mentoria/": [

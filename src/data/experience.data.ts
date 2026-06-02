@@ -3,7 +3,10 @@ import type { ExperienceItem } from "@/types/experience.types";
 export const experienceItems: ExperienceItem[] = [
   {
     id: "docencia-actual",
-    badge: "Docencia actual",
+    badge: "Docencia",
+    period: "2023 · ago 2024 – presente",
+    company: "DuocUC",
+    role: "Docente",
     title: "Convertir experiencia profesional en aprendizaje técnico",
     body: "En DuocUC he llevado la experiencia de proyectos reales al aula, enseñando programación, fullstack, aplicaciones móviles con Ionic/Angular y Kotlin, bases de datos y arquitectura. El trabajo consiste en traducir conceptos complejos a ejercicios, proyectos y decisiones que los estudiantes puedan comprender y aplicar.",
     learning:
@@ -12,22 +15,53 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: "software-operacional",
     badge: "Software operacional",
+    period: "ago 2024 – presente",
+    company: "Veolia",
+    role: "Analista Desarrollador I",
     title: "Mantener y evolucionar sistemas que sostienen procesos reales",
-    body: "En Veolia he trabajado en análisis, desarrollo, mantención e integración de soluciones internas orientadas a necesidades operacionales. El foco está en comprender requerimientos, implementar mejoras, corregir incidencias y cuidar que el software siga aportando valor al negocio.",
+    body: "En Veolia me desempeño en análisis, desarrollo, mantención e integración de soluciones internas orientadas a necesidades operacionales. El foco está en comprender requerimientos, implementar mejoras, corregir incidencias y cuidar que el software siga aportando valor al negocio.",
     learning:
       "El software útil no termina cuando se despliega; necesita soporte, evolución, documentación y criterio para cambiar sin romper.",
   },
   {
     id: "liderazgo-tecnico",
     badge: "Liderazgo técnico",
+    period: "mar 2024 – jul 2024",
+    company: "Stefanini",
+    role: "Tech Leader",
     title: "Guiar equipos bajo presión de entrega y calidad",
     body: "En Stefanini participé como Tech Leader en un proyecto de mejora de experiencia para un contexto aeroportuario. El trabajo combinó coordinación técnica, revisión de código, definición de buenas prácticas, apoyo al equipo y construcción de componentes listos para pruebas y evolución.",
     learning:
       "Liderar técnicamente no es solo decidir tecnologías; es crear condiciones para que el equipo entregue con claridad, foco y calidad.",
   },
   {
+    id: "desarrollo-independiente",
+    badge: "Desarrollo independiente",
+    period: "2021 – presente",
+    company: "Proyectos propios",
+    role: "Creador",
+    title: "Explorar tecnología y creatividad a través del videojuego web",
+    body: "En paralelo a la actividad profesional, desarrollo videojuegos web como ejercicio creativo y técnico. Proyectos como Starborne Voyager, Lab Lights, Neon Pursuit y Web Game Prototypes son experimentos donde aplico Three.js, React, Canvas 2D y p5.js para explorar física, gráficos y mecánicas interactivas, con límites técnicos distintos a los del software empresarial.",
+    learning:
+      "El desarrollo de juegos impone restricciones de performance, feedback inmediato y diseño de mecánicas que amplían el criterio técnico de formas que los proyectos de empresa no siempre permiten.",
+  },
+  {
+    id: "gendigital",
+    badge: "Emprendimiento",
+    period: "2022 – presente",
+    company: "GenDigital",
+    role: "Fundador",
+    title: "Construir producto y servicio propio desde cero",
+    body: "GenDigital es un emprendimiento personal orientado al desarrollo de productos y servicios digitales. Un espacio para explorar ideas propias fuera del contexto de cliente, aplicando criterio técnico, diseño y producto desde la perspectiva del creador.",
+    learning:
+      "Construir sin cliente obliga a priorizar con criterio propio; el conocimiento técnico solo es útil si va acompañado de visión de producto y capacidad de tomar decisiones con recursos limitados.",
+  },
+  {
     id: "escala-producto",
     badge: "Escala y producto",
+    period: "mar 2022 – mar 2024",
+    company: "Mercado Libre",
+    role: "Senior SE / Tech Leader",
     title: "Diseñar software para decisiones complejas en sistemas de alto movimiento",
     body: "En Mercado Libre trabajé en un dominio donde las decisiones técnicas impactan flujos de venta, stock, distribución y operación. La experiencia exigió análisis, diseño, backend, colaboración, integración y liderazgo para construir soluciones confiables dentro de un ecosistema amplio.",
     learning:
@@ -36,6 +70,9 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: "diseno-software",
     badge: "Diseño de software",
+    period: "feb 2021 – feb 2022",
+    company: "Globant",
+    role: "Software Designer",
     title: "Elevar estándares técnicos en plataformas internas y transformación cloud",
     body: "En Globant trabajé en diseño de software, revisión de código, definición de buenas prácticas, workshops técnicos y refactorización en contextos de plataformas internas y modernización tecnológica. El foco fue mejorar consistencia, mantenibilidad y adopción de prácticas transversales.",
     learning:
@@ -44,6 +81,9 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: "banca-integracion",
     badge: "Banca e integración",
+    period: "jul 2019 – feb 2021",
+    company: "GlobalLogic",
+    role: "Senior Software Engineer",
     title: "Construir bajo restricciones normativas, integración y plazos exigentes",
     body: "En GlobalLogic participé en proyectos para banca donde la integración entre sistemas, los microservicios, la mensajería, las pruebas, la documentación y herramientas de calidad como SonarQube, JMeter o Selenium eran fundamentales según el contexto del proyecto.",
     learning:
@@ -52,6 +92,9 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: "modernizacion",
     badge: "Modernización",
+    period: "oct 2018 – jun 2019",
+    company: "Imagemaker",
+    role: "Ingeniero de Software",
     title: "Mejorar plataformas existentes sin desconocer su historia",
     body: "En Imagemaker trabajé en proyectos de banca, gestión documental y migración serverless. La labor incluyó análisis, desarrollo, refactorización, diseño técnico, servicios REST, pruebas y mejoras sobre sistemas con restricciones reales de negocio y tecnología.",
     learning:
@@ -60,6 +103,9 @@ export const experienceItems: ExperienceItem[] = [
   {
     id: "base-profesional",
     badge: "Base profesional",
+    period: "2009 – 2018",
+    company: "everis, Suez, Woodtech y otros",
+    role: "Desarrollador",
     title: "Construir criterio desde sistemas empresariales diversos",
     body: "En experiencias previas participé en relatorías, medición industrial, sistemas para utilities, proyectos públicos, integración web y administración de sistemas empresariales. Esa base permitió conocer distintos dominios, estilos de trabajo y niveles de madurez tecnológica.",
     learning:

@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { ProjectHighlightSection } from "@/components/sections/ProjectHighlightSection";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+        <ExperienceSection id="experiencia" />
         <ServicesSection />
         <TrustSection />
         <ProjectHighlightSection />

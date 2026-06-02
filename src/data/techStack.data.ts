@@ -127,6 +127,17 @@ export const techItems: TechItem[] = [
     icon: { type: "devicon", className: "devicon-mongodb-plain-wordmark colored" },
   },
   {
+    id: "mongodb-atlas",
+    name: "MongoDB Atlas",
+    description: "Base de datos cloud administrada",
+    groups: ["datos"],
+    icon: {
+      type: "brand-img",
+      src: "https://cdn.simpleicons.org/mongodb/47A248",
+      alt: "MongoDB Atlas",
+    },
+  },
+  {
     id: "redis",
     name: "Redis",
     description: "Cache y datos en memoria",
@@ -271,6 +282,20 @@ export const techItems: TechItem[] = [
     },
   },
   {
+    id: "oauth2",
+    name: "OAuth2",
+    description: "Autenticación y autorización",
+    groups: ["backend"],
+    icon: { type: "generic", iconClass: "bi bi-shield-lock-fill" },
+  },
+  {
+    id: "json",
+    name: "JSON",
+    description: "Formato de datos e integración",
+    groups: ["backend"],
+    icon: { type: "generic", iconClass: "bi bi-braces" },
+  },
+  {
     id: "jmeter",
     name: "JMeter",
     description: "Pruebas de carga",
@@ -290,6 +315,53 @@ export const techItems: TechItem[] = [
       type: "brand-img",
       src: "https://cdn.simpleicons.org/selenium/43B02A",
       alt: "Selenium",
+    },
+  },
+  {
+    id: "yaml",
+    name: "YML",
+    description: "Configuración declarativa",
+    groups: ["devops"],
+    icon: { type: "devicon", className: "devicon-yaml-plain colored" },
+  },
+  {
+    id: "opencode",
+    name: "OpenCode",
+    description: "Asistente de código con IA",
+    groups: ["devops"],
+    icon: { type: "generic", iconClass: "bi bi-terminal-fill" },
+  },
+  {
+    id: "claude-code",
+    name: "Claude Code",
+    description: "CLI de IA para desarrollo",
+    groups: ["devops"],
+    icon: {
+      type: "brand-img",
+      src: "https://cdn.simpleicons.org/anthropic/D97757",
+      alt: "Claude Code",
+    },
+  },
+  {
+    id: "codex",
+    name: "Codex",
+    description: "IA para generación de código",
+    groups: ["devops"],
+    icon: {
+      type: "brand-img",
+      src: "https://cdn.simpleicons.org/openai/412991",
+      alt: "Codex",
+    },
+  },
+  {
+    id: "copilot-cli",
+    name: "Copilot CLI",
+    description: "Asistente IA en terminal",
+    groups: ["devops"],
+    icon: {
+      type: "brand-img",
+      src: "https://cdn.simpleicons.org/githubcopilot/000000",
+      alt: "GitHub Copilot CLI",
     },
   },
 ];

@@ -4,12 +4,14 @@ export const featuredCertifications: CertificationItem[] = [
   {
     id: "splpc",
     title: "Software Project Leader",
-    issuer: "SPLPC",
+    issuer: "CertiProf",
     year: "2025",
     category: "Liderazgo",
     featured: true,
     description:
       "Software Project Leader Professional Certification - SPLPC, orientada a liderazgo, gestión y conducción de proyectos de software.",
+    credlyUrl: "https://www.credly.com/badges/6c9db7d4-3dae-4c0b-9b14-16e9135af736/public_url",
+    badgeImageUrl: "https://images.credly.com/images/a9500f3f-00ae-491e-9e5f-792fd2ce3be0/linkedin_thumb_blob",
   },
   {
     id: "oracle-java",
@@ -20,6 +22,8 @@ export const featuredCertifications: CertificationItem[] = [
     featured: true,
     description:
       "Oracle Certified Associate, Java SE 8 Programmer I. Refuerza una base formal en Java, lenguaje central de mi trayectoria backend.",
+    credlyUrl: "https://www.credly.com/badges/c67aa6bc-580f-431b-91ba-8742620ddf43/public_url",
+    badgeImageUrl: "https://images.credly.com/images/a9848abf-f8bd-474d-a9b4-6086da11a916/linkedin_thumb_Oracle_Associates_Badge__1_.png",
   },
   {
     id: "kotlin-fundamentals",
@@ -29,6 +33,42 @@ export const featuredCertifications: CertificationItem[] = [
     category: "Mobile",
     featured: true,
     description: "Programming Fundamentals in Kotlin, conectado con docencia y desarrollo móvil moderno.",
+  },
+  {
+    id: "aws-educator",
+    title: "AWS Academy Educator",
+    issuer: "Amazon Web Services",
+    year: "2025",
+    category: "Cloud",
+    featured: true,
+    description:
+      "Credencial de educador certificado por AWS Academy, habilitado para impartir formación oficial en tecnologías de nube de Amazon Web Services.",
+    credlyUrl: "https://www.credly.com/badges/88151f75-13ca-42d5-ab8a-bb80f4757c16/public_url",
+    badgeImageUrl: "https://images.credly.com/images/e7bf6727-22cf-45d6-ad9c-76ab57c3f11b/linkedin_thumb_image.png",
+  },
+  {
+    id: "depc",
+    title: "DevOps Essentials",
+    issuer: "CertiProf",
+    year: "2025",
+    category: "DevOps",
+    featured: true,
+    description:
+      "DevOps Essentials Professional Certification - DEPC®, cubre principios fundamentales de cultura DevOps, integración continua, entrega continua y colaboración entre desarrollo y operaciones.",
+    credlyUrl: "https://www.credly.com/badges/def21580-84af-4f8a-a046-238643f0771a/public_url",
+    badgeImageUrl: "https://images.credly.com/images/c3f12faf-d477-49f0-8032-32121303dc55/linkedin_thumb_blob",
+  },
+  {
+    id: "lifelong-learning-2026",
+    title: "Lifelong Learning 2026",
+    issuer: "Credly",
+    year: "2026",
+    category: "Aprendizaje",
+    featured: false,
+    description:
+      "Reconocimiento al compromiso con el aprendizaje continuo durante 2026.",
+    credlyUrl: "https://www.credly.com/badges/0018fbbd-f79a-41da-b29d-ab5d93f0e4f0/public_url",
+    badgeImageUrl: "https://images.credly.com/images/5e2afabf-62f3-48ae-bbed-7e57c2e78c6a/linkedin_thumb_blob",
   },
 ];
 
