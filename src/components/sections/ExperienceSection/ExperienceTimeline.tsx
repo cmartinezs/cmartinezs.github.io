@@ -167,6 +167,20 @@ export function ExperienceTimeline() {
                 }}
               >
                 <Badge variant="pill">{item.badge}</Badge>
+                {item.domain && (
+                  <span
+                    style={{
+                      fontSize: "0.7rem",
+                      padding: "0.15rem 0.5rem",
+                      borderRadius: "999px",
+                      border: "1px solid var(--panel-border)",
+                      color: "var(--muted)",
+                      background: "rgba(255,255,255,0.04)",
+                    }}
+                  >
+                    {item.domain}
+                  </span>
+                )}
                 {item.company && (
                   <span
                     className="text-muted-custom"
@@ -196,12 +210,47 @@ export function ExperienceTimeline() {
               >
                 {item.body}
               </p>
+
+              {i === activeIndex && item.impact && (
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    lineHeight: 1.6,
+                    marginBottom: "0.5rem",
+                    color: "var(--text)",
+                    borderLeft: "2px solid var(--accent)",
+                    paddingLeft: "0.75rem",
+                  }}
+                >
+                  {item.impact}
+                </p>
+              )}
+
               <p
                 className="text-muted-custom"
                 style={{ fontSize: "0.82rem", marginBottom: 0, opacity: 0.85 }}
               >
                 <strong>Aprendizaje:</strong> {item.learning}
               </p>
+
+              {i === activeIndex && item.stack && item.stack.length > 0 && (
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.35rem",
+                    marginTop: "0.75rem",
+                    paddingTop: "0.75rem",
+                    borderTop: "1px solid var(--panel-border)",
+                  }}
+                >
+                  {item.stack.map((tech) => (
+                    <span key={tech} className="case-stack-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}

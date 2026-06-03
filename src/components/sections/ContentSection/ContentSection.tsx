@@ -36,8 +36,8 @@ export function ContentSection() {
               <li>Capacitar equipos, alumnos o perfiles técnicos.</li>
               <li>Integrar IA en tu flujo de trabajo.</li>
             </ul>
-            <Link className="card-link-custom" href="/mentoria/">
-              Ver mentoría
+            <Link className="card-link-custom" href="/contacto/?topic=colaboracion">
+              Hablemos de tu proyecto
             </Link>
           </GlassCard>
         </div>

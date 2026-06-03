@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { navPages, pageAnchors } from "@/data/navigation.data";
 import { cn } from "@/lib/cn";
 import styles from "./Navbar.module.css";
@@ -13,10 +13,22 @@ export function Navbar() {
   const [explorarOpen, setExplorarOpen] = useState(false);
 
   const sectionLinks = pageAnchors[pathname] ?? [];
+  const explorarRef = useRef<HTMLDivElement>(null);
   const close = () => { setMobileOpen(false); setExplorarOpen(false); };
 
+  useEffect(() => {
+    if (!explorarOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (!explorarRef.current?.contains(e.target as Node)) {
+        setExplorarOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [explorarOpen]);
+
   return (
-    <nav className={cn(styles.nav, "fixed top-0 inset-x-0 z-50")}>
+    <nav className={styles.nav}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand} onClick={close}>
           Carlos Martínez
@@ -31,8 +43,8 @@ export function Navbar() {
           ))}
 
           <div
+            ref={explorarRef}
             className={styles.explorarWrapper}
-            onMouseLeave={() => setExplorarOpen(false)}
           >
             <button
               className={styles.link}

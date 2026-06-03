@@ -7,6 +7,13 @@ export interface ExperienceItem {
   title: string;
   body: string;
   learning: string;
+  domain?: string;
+  impact?: string;
+  scope?: string;
+  stack?: string[];
+  responsibilities?: string[];
+  proofLevel?: "verified" | "inferred" | "qualitative";
+  relatedCaseStudyIds?: string[];
 }
 
 export interface TechnicalCourse {

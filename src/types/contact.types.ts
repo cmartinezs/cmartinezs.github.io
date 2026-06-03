@@ -1,6 +1,7 @@
 export interface ContactTopic {
   value: string;
   label: string;
+  hint?: string;
 }
 
 export interface ContactFormData {

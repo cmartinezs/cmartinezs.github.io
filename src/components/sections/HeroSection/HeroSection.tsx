@@ -7,9 +7,12 @@ import { GlassCard } from "@/components/sub-components/GlassCard";
 import { GlowEffect } from "@/components/nano-components/GlowEffect";
 import { staggerFadeUp, floatAnimation } from "@/lib/animations";
 import { useHeroAnimation } from "@/hooks/useHeroAnimation";
+import { heroContent } from "@/data/hero.data";
+import type { HeroAction } from "@/types/hero.types";
 
 export function HeroSection() {
   const { shouldAnimate } = useHeroAnimation();
+  const { eyebrow, title, tagline, lead, actions, signals } = heroContent;
 
   return (
     <section className="hero flex items-center" id="inicio">
@@ -20,27 +23,30 @@ export function HeroSection() {
               {shouldAnimate ? (
                 <>
                   <motion.div variants={staggerFadeUp} className="eyebrow">
-                    Software · Formación · IA aplicada
+                    {eyebrow}
                   </motion.div>
                   <motion.h1 variants={staggerFadeUp} className="hero-title">
-                    Construyo software robusto.{" "}
-                    <span>Ayudo a equipos a crecer.</span>
+                    {title}
                   </motion.h1>
+                  {tagline && (
+                    <motion.p variants={staggerFadeUp} className="hero-tagline">
+                      {tagline}
+                    </motion.p>
+                  )}
                   <motion.div
                     variants={staggerFadeUp}
                     className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6"
                   >
-                    <HeroActions />
+                    <HeroActions actions={actions} />
                   </motion.div>
                 </>
               ) : (
                 <>
-                  <div className="eyebrow">Software · Formación · IA aplicada</div>
-                  <h1 className="hero-title">
-                    Construyo software robusto. <span>Ayudo a equipos a crecer.</span>
-                  </h1>
+                  <div className="eyebrow">{eyebrow}</div>
+                  <h1 className="hero-title">{title}</h1>
+                  {tagline && <p className="hero-tagline">{tagline}</p>}
                   <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-6">
-                    <HeroActions />
+                    <HeroActions actions={actions} />
                   </div>
                 </>
               )}
@@ -58,22 +64,14 @@ export function HeroSection() {
                 <TerminalCard />
               )}
               <GlassCard className="hero-support-card">
-                <p className="hero-support-lead mb-0">
-                  Aporto criterio técnico, foco en entrega realista y transferencia clara hacia el equipo.
-                </p>
+                <p className="hero-support-lead mb-0">{lead}</p>
                 <div className="hero-signal-grid">
-                  <div className="hero-signal">
-                    <strong>15+</strong>
-                    <span>años construyendo software</span>
-                  </div>
-                  <div className="hero-signal">
-                    <strong>Prod</strong>
-                    <span>sistemas productivos reales</span>
-                  </div>
-                  <div className="hero-signal">
-                    <strong>Edu</strong>
-                    <span>docencia activa superior</span>
-                  </div>
+                  {signals.map((signal) => (
+                    <div key={signal.value} className="hero-signal">
+                      <strong>{signal.value}</strong>
+                      <span>{signal.description ?? signal.label}</span>
+                    </div>
+                  ))}
                 </div>
               </GlassCard>
             </div>
@@ -84,21 +82,44 @@ export function HeroSection() {
   );
 }
 
-function HeroActions() {
+function HeroActions({ actions }: { actions: HeroAction[] }) {
   return (
     <>
-      <Link
-        href="/contacto/?topic=colaboracion"
-        className="btn-primary-custom"
-      >
-        <i className="bi bi-chat-dots-fill" aria-hidden="true" /> Hablemos de tu proyecto
-      </Link>
-      <Link
-        href="#servicios"
-        className="btn-outline-custom"
-      >
-        <i className="bi bi-compass-fill" aria-hidden="true" /> Explorar servicios
-      </Link>
+      {actions.map((action) =>
+        action.external ? (
+          <a
+            key={action.href}
+            href={action.href}
+            className={
+              action.variant === "primary"
+                ? "btn-primary-custom"
+                : "btn-outline-custom"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {action.icon && (
+              <i className={`bi ${action.icon}`} aria-hidden="true" />
+            )}{" "}
+            {action.label}
+          </a>
+        ) : (
+          <Link
+            key={action.href}
+            href={action.href}
+            className={
+              action.variant === "primary"
+                ? "btn-primary-custom"
+                : "btn-outline-custom"
+            }
+          >
+            {action.icon && (
+              <i className={`bi ${action.icon}`} aria-hidden="true" />
+            )}{" "}
+            {action.label}
+          </Link>
+        )
+      )}
     </>
   );
 }

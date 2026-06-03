@@ -9,9 +9,9 @@ import { GlassCard } from "@/components/sub-components/GlassCard";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Backend",
+  title: "Backend y Arquitectura de Software",
   description:
-    "Backend robusto con Java, Spring Boot y arquitectura limpia. APIs, integraciones y sistemas mantenibles.",
+    "Diseño y desarrollo de APIs REST, microservicios y arquitecturas mantenibles con Java y Spring Boot. Especialización en clean architecture, integración de sistemas, seguridad y evolución técnica en proyectos enterprise.",
   path: "/backend/",
 });
 

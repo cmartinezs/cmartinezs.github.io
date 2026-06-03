@@ -9,9 +9,9 @@ import { GlassCard } from "@/components/sub-components/GlassCard";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mentoría",
+  title: "Liderazgo Técnico y Mentoría",
   description:
-    "Mentoría técnica en Java, Spring Boot, frontend, mobile, testing y preparación de entrevistas.",
+    "Acompañamiento técnico para equipos y desarrolladores: revisión de código, decisiones de arquitectura, buenas prácticas y transferencia de criterio. Enfocado en equipos junior y semi-senior que necesitan un referente técnico senior.",
   path: "/mentoria/",
 });
 
