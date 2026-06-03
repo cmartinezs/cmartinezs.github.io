@@ -7,7 +7,7 @@ export function StackShowcaseSection() {
         <div className="mb-6">
           <span className="eyebrow">Stack tecnológico</span>
           <h2 className="display-heading display-5 mt-4 mb-0">
-            Herramientas para construir productos serios.
+            Stack técnico con criterio, no un catálogo plano.
           </h2>
         </div>
         <StackShowcase />

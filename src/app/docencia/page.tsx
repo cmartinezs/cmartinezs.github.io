@@ -10,9 +10,9 @@ import { CoursesSection } from "@/components/sections/CoursesSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Docencia",
+  title: "Formación Técnica Aplicada",
   description:
-    "Formación técnica en programación, backend, frontend mobile y arquitectura. Docencia en DuocUC y proyectos educativos.",
+    "Docencia universitaria y programas de capacitación en backend, APIs REST, arquitectura de software y buenas prácticas. Formación conectada con la práctica real de la industria, no solo con la teoría.",
   path: "/docencia/",
 });
 

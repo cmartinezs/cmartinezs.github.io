@@ -3,7 +3,21 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { staggerFadeUp } from "@/lib/animations";
-import type { TechItem, StackGroup } from "@/types/tech.types";
+import type { TechItem, TechLevel, StackGroup } from "@/types/tech.types";
+
+const levelOrder: Record<TechLevel, number> = {
+  core: 0,
+  strong: 1,
+  working: 2,
+  exploratory: 3,
+};
+
+const levelLabels: Record<TechLevel, string> = {
+  core: "Core",
+  strong: "Sólido",
+  working: "En uso",
+  exploratory: "Exploratorio",
+};
 
 interface TechCardGridProps {
   items: TechItem[];
@@ -11,7 +25,14 @@ interface TechCardGridProps {
 }
 
 export function TechCardGrid({ items, activeGroup }: TechCardGridProps) {
-  const visibleItems = items.filter((item) => item.groups.includes(activeGroup));
+  const visibleItems = items
+    .filter((item) => item.groups.includes(activeGroup))
+    .sort((a, b) => {
+      const la = a.level ? levelOrder[a.level] : 4;
+      const lb = b.level ? levelOrder[b.level] : 4;
+      if (la !== lb) return la - lb;
+      return (a.priority ?? 99) - (b.priority ?? 99);
+    });
 
   return (
     <div className="stack-grid">
@@ -37,6 +58,11 @@ export function TechCardGrid({ items, activeGroup }: TechCardGridProps) {
               <TechIcon item={item} />
               <span>{item.name}</span>
               <small>{item.description}</small>
+              {item.level && (
+                <span className={`tech-level-badge tech-level-${item.level}`}>
+                  {levelLabels[item.level]}
+                </span>
+              )}
             </motion.article>
           ))}
         </motion.div>

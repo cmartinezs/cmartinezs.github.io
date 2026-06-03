@@ -4,18 +4,21 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { ProjectHighlightSection } from "@/components/sections/ProjectHighlightSection";
 import { StackShowcaseSection } from "@/components/sections/StackShowcaseSection";
 import { ContentSection } from "@/components/sections/ContentSection";
+import { ProfileSummarySection } from "@/components/sections/ProfileSummarySection";
+import { WorkMethodSection } from "@/components/sections/WorkMethodSection";
+import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
+import { CollaborationSection } from "@/components/sections/CollaborationSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Software Developer & Docente",
+  title: "Backend, Arquitectura y Formación Técnica",
   description:
-    "Carlos Martínez, software developer backend specialist, docente universitario y creador de soluciones con IA. 15+ años de experiencia en Java, Spring Boot, React, Kotlin.",
+    "Desarrollador backend senior y docente técnico con 15+ años en sistemas reales. Diseño APIs y arquitecturas mantenibles, acompaño equipos en decisiones técnicas y transfiero criterio a través de la formación aplicada. Especialización en Java, Spring Boot, sistemas enterprise y educación superior.",
   path: "/",
 });
 
@@ -25,29 +28,32 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <ExperienceSection id="experiencia" />
+        <ProfileSummarySection />
         <ServicesSection />
+        <CaseStudiesSection />
+        <WorkMethodSection />
         <TrustSection />
         <ProjectHighlightSection />
         <StackShowcaseSection />
         <ContentSection />
+        <CollaborationSection />
         <CTASection
-          eyebrow="Contacto"
-          title="¿Tienes una idea, sistema o equipo que necesita apoyo técnico?"
-          lead="Puedo ayudarte a diseñar una solución, mejorar una arquitectura, construir una API, formar desarrolladores o explorar automatización con IA."
+          eyebrow="¿Empezamos?"
+          title="Hablemos si tienes un proyecto, equipo o programa que necesita criterio técnico."
+          lead="Puedo ayudarte con arquitectura backend, liderazgo técnico, formación aplicada o una alianza en un proyecto concreto."
           primaryHref="/contacto/?topic=colaboracion"
-          primaryLabel="Formulario de contacto"
+          primaryLabel="Iniciar conversación"
           secondaryLinks={[
-            {
-              href: "https://github.com/cmartinezs",
-              label: "GitHub",
-              icon: "bi-github",
-              external: true,
-            },
             {
               href: "https://www.linkedin.com/in/cfms",
               label: "LinkedIn",
               icon: "bi-linkedin",
+              external: true,
+            },
+            {
+              href: "https://github.com/cmartinezs",
+              label: "GitHub",
+              icon: "bi-github",
               external: true,
             },
           ]}

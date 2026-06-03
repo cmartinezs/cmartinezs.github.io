@@ -70,6 +70,14 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
             {errors["topic"] && (
               <div className="form-note text-danger mt-1">{errors["topic"]}</div>
             )}
+            {(() => {
+              const hint = contactTopics.find((t) => t.value === data.topic)?.hint;
+              return hint ? (
+                <p className="form-note mt-2" style={{ opacity: 0.75 }}>
+                  <i className="bi bi-info-circle" aria-hidden="true" /> {hint}
+                </p>
+              ) : null;
+            })()}
           </ContactFormField>
         </div>
 

@@ -2,11 +2,16 @@
 
 import { GlassCard } from "@/components/sub-components/GlassCard";
 import { ServiceCardBody } from "@/components/sub-components/ServiceCardBody";
-import { useCarousel } from "@/hooks/useCarousel";
-import { services } from "@/data/services.data";
+import { useInfiniteCarousel } from "@/hooks/useInfiniteCarousel";
+import type { Service } from "@/types/service.types";
 
-export function ServicesCarousel() {
-  const { trackRef, translateX, goNext, goPrev } = useCarousel(services.length);
+interface ServicesCarouselProps {
+  services: Service[];
+}
+
+export function ServicesCarousel({ services }: ServicesCarouselProps) {
+  const repeated = [...services, ...services, ...services];
+  const { trackRef, translateX, goNext, goPrev, animated } = useInfiniteCarousel(services.length);
 
   return (
     <div className="services-carousel">
@@ -20,7 +25,7 @@ export function ServicesCarousel() {
             className="services-carousel-control"
             type="button"
             onClick={goPrev}
-            aria-label="Ver servicios anteriores"
+            aria-label="Ver servicio anterior"
           >
             <i className="bi bi-arrow-left" aria-hidden="true" />
           </button>
@@ -28,7 +33,7 @@ export function ServicesCarousel() {
             className="services-carousel-control"
             type="button"
             onClick={goNext}
-            aria-label="Ver servicios siguientes"
+            aria-label="Ver servicio siguiente"
           >
             <i className="bi bi-arrow-right" aria-hidden="true" />
           </button>
@@ -39,10 +44,17 @@ export function ServicesCarousel() {
         <div
           ref={trackRef}
           className="services-carousel-track"
-          style={{ transform: `translateX(${translateX}px)` }}
+          style={{
+            transform: `translateX(${translateX}px)`,
+            transition: animated ? undefined : "none",
+          }}
         >
-          {services.map((service) => (
-            <GlassCard key={service.id} as="article" className="services-carousel-slide">
+          {repeated.map((service, i) => (
+            <GlassCard
+              key={`${service.id}-${i}`}
+              as="article"
+              className="services-carousel-slide"
+            >
               <ServiceCardBody service={service} />
             </GlassCard>
           ))}

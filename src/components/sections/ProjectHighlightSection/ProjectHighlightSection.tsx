@@ -1,38 +1,67 @@
 import Link from "next/link";
 import { GlassCard } from "@/components/sub-components/GlassCard";
 import { Badge } from "@/components/mini-components/Badge";
+import { labProjects } from "@/data/labProjects.data";
 
 export function ProjectHighlightSection() {
+  const featured = labProjects.find((p) => p.featured) ?? labProjects[0];
+  if (!featured) return null;
+
   return (
     <section className="section" id="keygo">
       <div className="container">
         <GlassCard className="project-card p-lg-5">
           <div className="grid lg:grid-cols-12 gap-6 items-center relative z-10">
             <div className="lg:col-span-7">
-              <Badge variant="pill" className="mb-3">
-                Proyecto destacado
-              </Badge>
-              <h2 className="display-heading display-5">KeyGo: autenticación como servicio.</h2>
-              <p className="text-muted-custom text-lg mt-4">
-                KeyGo es una iniciativa en desarrollo para simplificar la autenticación de
-                aplicaciones y usuarios mediante una plataforma SaaS multi-tenant. La presento como
-                una línea de trabajo y aprendizaje público, no como un producto comercial finalizado.
+              {featured.badge && (
+                <Badge variant="pill" className="mb-3">
+                  {featured.badge}
+                </Badge>
+              )}
+              <h2 className="display-heading display-5">{featured.title}</h2>
+              <p className="text-muted-custom mt-3" style={{ fontStyle: "italic", opacity: 0.85 }}>
+                {featured.tagline}
               </p>
+              <p className="text-muted-custom text-lg mt-3">{featured.description}</p>
               <p className="mb-0">
-                <strong>Estado:</strong> próximamente disponible.
+                <strong>Estado:</strong> {featured.statusLabel}.
               </p>
-              <Link className="card-link-custom" href="/keygo/">
-                Ver landing de KeyGo
-              </Link>
+              {featured.learnings && featured.learnings.length > 0 && (
+                <div className="mt-3">
+                  <p
+                    className="case-card-label"
+                    style={{ marginBottom: "0.4rem" }}
+                  >
+                    Aprendizajes de diseño
+                  </p>
+                  <ul className="service-outcomes-list">
+                    {featured.learnings.map((l) => (
+                      <li key={l}>{l}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <div className="flex flex-wrap gap-4 mt-4">
+                <Link className="card-link-custom" href={featured.href}>
+                  {featured.linkLabel}
+                </Link>
+              </div>
             </div>
             <div className="lg:col-span-5">
               <ul className="feature-list">
-                <li>Multi-tenant con organizaciones independientes.</li>
-                <li>Gestión de usuarios y roles.</li>
-                <li>Autenticación centralizada.</li>
-                <li>Tokens para aplicaciones y usuarios.</li>
-                <li>Arquitectura escalable pensada para startups.</li>
+                {featured.features.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
               </ul>
+              {featured.stack.length > 0 && (
+                <div className="case-card-stack" style={{ marginTop: "1.5rem" }}>
+                  {featured.stack.map((tech) => (
+                    <span key={tech} className="case-stack-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </GlassCard>

@@ -10,30 +10,36 @@ export interface NavAnchor {
 
 export const navPages: NavPage[] = [
   { label: "Inicio", href: "/" },
-  { label: "Frontend", href: "/frontend/" },
-  { label: "Mobile", href: "/mobile/" },
   { label: "Backend", href: "/backend/" },
   { label: "Arquitectura", href: "/arquitectura/" },
-  { label: "Experiencia", href: "/experiencia/" },
-  { label: "Docencia", href: "/docencia/" },
-  { label: "Videojuegos", href: "/videojuegos/" },
   { label: "Mentoría", href: "/mentoria/" },
+  { label: "Docencia", href: "/docencia/" },
+  { label: "Frontend", href: "/frontend/" },
+  { label: "Mobile", href: "/mobile/" },
   { label: "AI", href: "/ai/" },
+  { label: "Experiencia", href: "/experiencia/" },
+  { label: "Casos", href: "/casos/" },
   { label: "Certificaciones", href: "/certificaciones/" },
-  { label: "Recursos", href: "/recursos/" },
+  { label: "Videojuegos", href: "/videojuegos/" },
   { label: "KeyGo", href: "/keygo/" },
+  { label: "Recursos", href: "/recursos/" },
   { label: "Contacto", href: "/contacto/" },
 ];
 
 export const pageAnchors: Record<string, NavAnchor[]> = {
   "/": [
     { href: "#inicio", label: "Inicio" },
-    { href: "#experiencia", label: "Experiencia" },
+    { href: "#perfil", label: "Perfil" },
     { href: "#servicios", label: "Servicios" },
-    { href: "#confianza", label: "Confianza" },
-    { href: "#keygo", label: "KeyGo" },
+    { href: "#casos", label: "Casos" },
+    { href: "#metodo", label: "Método" },
     { href: "#stack", label: "Stack" },
-    { href: "#contenido", label: "Contenido" },
+    { href: "#alianzas", label: "Alianzas" },
+    { href: "#contacto", label: "Contacto" },
+  ],
+  "/casos/": [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#casos-lista", label: "Casos" },
     { href: "#contacto", label: "Contacto" },
   ],
   "/frontend/": [
