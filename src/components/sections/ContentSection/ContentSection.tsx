@@ -3,7 +3,7 @@ import { GlassCard } from "@/components/sub-components/GlassCard";
 
 export function ContentSection() {
   return (
-    <section className="section" id="contenido">
+    <section className="section" id="recursos">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <GlassCard>

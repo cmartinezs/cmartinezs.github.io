@@ -4,6 +4,14 @@ import { ServicesCarousel } from "@/components/components/ServicesCarousel";
 export function ServicesSection() {
   return (
     <section className="section" id="servicios">
+      {/* Anchor targets for sub-navigation from Secciones dropdown */}
+      <span id="backend" aria-hidden="true" className="section-anchor" />
+      <span id="arquitectura" aria-hidden="true" className="section-anchor" />
+      <span id="mentoria" aria-hidden="true" className="section-anchor" />
+      <span id="docencia" aria-hidden="true" className="section-anchor" />
+      <span id="frontend" aria-hidden="true" className="section-anchor" />
+      <span id="mobile" aria-hidden="true" className="section-anchor" />
+      <span id="herramientas-ia" aria-hidden="true" className="section-anchor" />
       <div className="container">
         <div className="section-title">
           <span className="eyebrow">Qué hago</span>

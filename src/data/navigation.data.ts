@@ -49,25 +49,25 @@ export const navGroups: NavGroup[] = [
   {
     label: "Trayectoria",
     items: [
-      { label: "Experiencia", href: "/experiencia/" },
+      { label: "Experiencia", href: "/#experiencia" },
       { label: "Stack", href: "/#stack" },
-      { label: "Certificaciones", href: "/certificaciones/" },
+      { label: "Certificaciones", href: "/#certificaciones" },
     ],
   },
   {
     label: "Proyectos",
     items: [
-      { label: "Casos", href: "/casos/" },
-      { label: "KeyGo", href: "/keygo/" },
-      { label: "Videojuegos", href: "/videojuegos/" },
+      { label: "Casos", href: "/#casos" },
+      { label: "KeyGo", href: "/#keygo" },
+      { label: "Videojuegos", href: "/#videojuegos" },
     ],
   },
   {
     label: "Recursos y contacto",
     items: [
       { label: "Alianzas", href: "/#alianzas" },
-      { label: "Recursos", href: "/recursos/" },
-      { label: "Contacto", href: "/contacto/" },
+      { label: "Recursos", href: "/#recursos" },
+      { label: "Contacto", href: "/#contacto" },
     ],
   },
 ];
@@ -77,9 +77,10 @@ export const pageAnchors: Record<string, NavAnchor[]> = {
     { href: "#inicio", label: "Inicio" },
     { href: "#perfil", label: "Perfil" },
     { href: "#servicios", label: "Servicios" },
-    { href: "#casos", label: "Casos" },
     { href: "#metodo", label: "Método" },
+    { href: "#casos", label: "Casos" },
     { href: "#stack", label: "Stack" },
+    { href: "#experiencia", label: "Experiencia" },
     { href: "#alianzas", label: "Alianzas" },
     { href: "#contacto", label: "Contacto" },
   ],
@@ -121,7 +122,7 @@ export const pageAnchors: Record<string, NavAnchor[]> = {
   ],
   "/videojuegos/": [
     { href: "#inicio", label: "Inicio" },
-    { href: "#proyectos", label: "Proyectos" },
+    { href: "#videojuegos", label: "Proyectos" },
     { href: "#contacto", label: "Contacto" },
   ],
   "/mentoria/": [

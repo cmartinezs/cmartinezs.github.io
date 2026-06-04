@@ -4,15 +4,17 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { TrustSection } from "@/components/sections/TrustSection";
-import { ProjectHighlightSection } from "@/components/sections/ProjectHighlightSection";
-import { StackShowcaseSection } from "@/components/sections/StackShowcaseSection";
-import { ContentSection } from "@/components/sections/ContentSection";
 import { ProfileSummarySection } from "@/components/sections/ProfileSummarySection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WorkMethodSection } from "@/components/sections/WorkMethodSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
+import { ProjectHighlightSection } from "@/components/sections/ProjectHighlightSection";
+import { GamesSection } from "@/components/sections/GamesSection";
+import { StackShowcaseSection } from "@/components/sections/StackShowcaseSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
+import { CertificationsSection } from "@/components/sections/CertificationsSection";
 import { CollaborationSection } from "@/components/sections/CollaborationSection";
+import { ContentSection } from "@/components/sections/ContentSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
@@ -30,13 +32,15 @@ export default function HomePage() {
         <HeroSection />
         <ProfileSummarySection />
         <ServicesSection />
-        <CaseStudiesSection />
         <WorkMethodSection />
-        <TrustSection />
+        <CaseStudiesSection />
         <ProjectHighlightSection />
+        <GamesSection />
         <StackShowcaseSection />
-        <ContentSection />
+        <ExperienceSection id="experiencia" />
+        <CertificationsSection />
         <CollaborationSection />
+        <ContentSection />
         <CTASection
           eyebrow="¿Empezamos?"
           title="Hablemos si tienes un proyecto, equipo o programa que necesita criterio técnico."

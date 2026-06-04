@@ -11,6 +11,7 @@
   --primary: #49d2ff;
   --accent: #82f7bf;
   --warning: #ffd166;
+  --header-height: 4rem;
 }
 
 @theme inline {
@@ -51,6 +52,13 @@
 .h4 { font-size: 1.5rem;  font-weight: 700; line-height: 1.2; margin-top: 0; margin-bottom: 0.45rem; }
 .h5 { font-size: 1.25rem; font-weight: 700; line-height: 1.2; margin-top: 0; margin-bottom: 0.4rem; }
 .display-5 { font-size: 3rem; }
+
+.section-anchor {
+  display: block;
+  height: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 html {
   scroll-behavior: smooth;
@@ -393,6 +401,13 @@ body.page-certificaciones::before {
   color: var(--muted);
   font-size: 0.86rem;
   line-height: 1.45;
+}
+
+/* ─── Section screen (viewport-filling sections) ─────────────────────────── */
+.section-screen {
+  padding: clamp(3rem, 6vh, 5.5rem) 0;
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100svh - var(--header-height));
 }
 
 /* ─── Sections ───────────────────────────────────────────────────────────── */
@@ -931,6 +946,94 @@ body.page-certificaciones::before {
 }
 
 /* ─── Profile summary ────────────────────────────────────────────────────── */
+.profile-heading {
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.profile-paragraphs {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.profile-paragraphs p {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.profile-side {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.profile-stats-card {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 1.25rem 0.25rem;
+  border-color: rgba(73, 210, 255, 0.18);
+  background:
+    linear-gradient(145deg, rgba(73, 210, 255, 0.06), rgba(130, 247, 191, 0.04)),
+    var(--panel);
+}
+
+.profile-stat {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+.profile-stat + .profile-stat {
+  border-left: 1px solid var(--panel-border);
+}
+
+.profile-stat strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profile-stat span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.profile-pillars-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.profile-sectors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-sector-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.78rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
 /* ─── Profile pillar carousel ────────────────────────────────────────────── */
 .pillar-carousel {
   display: grid;
@@ -1763,6 +1866,10 @@ footer {
   .section {
     padding: 4rem 0;
   }
+  .section-screen {
+    min-height: 0;
+    padding: 4rem 0;
+  }
   .glass-card {
     padding: 1.25rem;
   }
@@ -1840,6 +1947,13 @@ footer {
   .scroll-top {
     right: 1rem;
     bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .section-screen {
+    min-height: 0;
+    padding: 5rem 0;
   }
 }
 

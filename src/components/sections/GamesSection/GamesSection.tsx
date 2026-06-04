@@ -3,7 +3,7 @@ import { GamePreviewCard } from "./GamePreviewCard";
 
 export function GamesSection() {
   return (
-    <section className="section" id="proyectos">
+    <section className="section" id="videojuegos">
       <div className="container">
         <div className="section-title">
           <span className="eyebrow">Proyectos</span>

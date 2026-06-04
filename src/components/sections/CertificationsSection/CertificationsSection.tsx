@@ -5,7 +5,7 @@ import { complementaryLearning } from "@/data/certifications.data";
 
 export function CertificationsSection() {
   return (
-    <>
+    <div id="certificaciones">
       <section className="section" id="destacadas">
         <div className="container">
           <div className="section-title">
@@ -45,6 +45,6 @@ export function CertificationsSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
