@@ -21,8 +21,11 @@ export interface TechnicalCourse {
   title: string;
   issuer: string;
   year: string;
+  date: string; // ISO: YYYY-MM-DD, YYYY-MM, or YYYY
   hours?: string;
   imageUrl?: string;
+  verifyUrl?: string;
+  downloadUrl?: string; // PDF preferred; falls back to imageUrl in the component
 }
 
 export interface CertificationItem {
@@ -30,11 +33,13 @@ export interface CertificationItem {
   title: string;
   issuer: string;
   year: string;
+  date: string; // ISO: YYYY-MM-DD, YYYY-MM, or YYYY
   category: string;
   featured?: boolean;
   description?: string;
   credlyUrl?: string;
   badgeImageUrl?: string;
+  verifyUrl?: string;
 }
 
 export interface CourseItem {

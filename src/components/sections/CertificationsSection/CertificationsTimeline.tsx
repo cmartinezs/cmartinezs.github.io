@@ -7,8 +7,11 @@ import { Badge } from "@/components/mini-components/Badge";
 import { ImageCarouselModal } from "@/components/sub-components/ImageCarouselModal/ImageCarouselModal";
 import type { CarouselImage } from "@/components/sub-components/ImageCarouselModal/ImageCarouselModal";
 import { featuredCertifications } from "@/data/certifications.data";
+import { sortByDateDesc } from "@/lib/sortByDate";
 
-const badgeImages: CarouselImage[] = featuredCertifications
+const sorted = sortByDateDesc(featuredCertifications);
+
+const badgeImages: CarouselImage[] = sorted
   .filter((c) => !!c.badgeImageUrl)
   .map((c) => ({
     src: c.badgeImageUrl!,
@@ -33,7 +36,7 @@ export function CertificationsTimeline() {
   return (
     <>
       <div className="cert-timeline">
-        {featuredCertifications.map((cert, i) => {
+        {sorted.map((cert, i) => {
           const isEven = i % 2 === 0;
 
           const badgeEl = (
@@ -102,6 +105,17 @@ export function CertificationsTimeline() {
                   style={{ marginTop: "0.75rem", display: "inline-block" }}
                 >
                   Ver badge en Credly
+                </Link>
+              )}
+              {cert.verifyUrl && (
+                <Link
+                  className="card-link-custom"
+                  href={cert.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ marginTop: "0.75rem", display: "inline-block" }}
+                >
+                  Verificar en Coursera
                 </Link>
               )}
             </div>
