@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { navPages, pageAnchors } from "@/data/navigation.data";
+import { navGroups, pageAnchors } from "@/data/navigation.data";
 import { cn } from "@/lib/cn";
 import styles from "./Navbar.module.css";
 
@@ -51,22 +51,28 @@ export function Navbar() {
               onClick={() => setExplorarOpen(!explorarOpen)}
               aria-expanded={explorarOpen}
             >
-              Explorar ▾
+              Secciones ▾
             </button>
             {explorarOpen && (
               <div className={styles.dropdown}>
-                {navPages.map((page) => (
-                  <Link
-                    key={page.href}
-                    href={page.href}
-                    className={cn(
-                      styles.dropdownItem,
-                      pathname === page.href && styles.dropdownItemActive
-                    )}
-                    onClick={close}
-                  >
-                    {page.label}
-                  </Link>
+                {navGroups.map((group) => (
+                  <div key={group.label} className={styles.dropdownGroup}>
+                    <span className={styles.dropdownGroupLabel}>{group.label}</span>
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={cn(
+                          styles.dropdownItem,
+                          pathname === item.href && styles.dropdownItemActive
+                        )}
+                        onClick={close}
+                      >
+                        {item.label}
+                        {item.core && <span className={styles.dropdownItemCore}>core</span>}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             )}
@@ -100,20 +106,25 @@ export function Navbar() {
               <hr className={styles.mobileDivider} />
             </>
           )}
-          <span className={styles.mobileSectionLabel}>Explorar</span>
-          {navPages.map((page) => (
-            <Link
-              key={page.href}
-              href={page.href}
-              className={cn(
-                styles.mobileLink,
-                styles.mobileSub,
-                pathname === page.href && styles.dropdownItemActive
-              )}
-              onClick={close}
-            >
-              {page.label}
-            </Link>
+          {navGroups.map((group) => (
+            <div key={group.label} className={styles.mobileGroup}>
+              <span className={styles.mobileSectionLabel}>{group.label}</span>
+              {group.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    styles.mobileLink,
+                    styles.mobileSub,
+                    pathname === item.href && styles.dropdownItemActive
+                  )}
+                  onClick={close}
+                >
+                  {item.label}
+                  {item.core && <span className={styles.dropdownItemCore}>core</span>}
+                </Link>
+              ))}
+            </div>
           ))}
         </div>
       )}

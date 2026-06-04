@@ -8,22 +8,68 @@ export interface NavAnchor {
   label: string;
 }
 
-export const navPages: NavPage[] = [
-  { label: "Inicio", href: "/" },
-  { label: "Backend", href: "/backend/" },
-  { label: "Arquitectura", href: "/arquitectura/" },
-  { label: "Mentoría", href: "/mentoria/" },
-  { label: "Docencia", href: "/docencia/" },
-  { label: "Frontend", href: "/frontend/" },
-  { label: "Mobile", href: "/mobile/" },
-  { label: "AI", href: "/ai/" },
-  { label: "Experiencia", href: "/experiencia/" },
-  { label: "Casos", href: "/casos/" },
-  { label: "Certificaciones", href: "/certificaciones/" },
-  { label: "Videojuegos", href: "/videojuegos/" },
-  { label: "KeyGo", href: "/keygo/" },
-  { label: "Recursos", href: "/recursos/" },
-  { label: "Contacto", href: "/contacto/" },
+export interface NavItem {
+  label: string;
+  href: string;
+  core?: boolean;
+}
+
+export interface NavGroup {
+  label: string;
+  items: NavItem[];
+}
+
+export const navGroups: NavGroup[] = [
+  {
+    label: "Principal",
+    items: [
+      { label: "Inicio", href: "/" },
+      { label: "Perfil", href: "/#perfil" },
+      { label: "Servicios", href: "/#servicios" },
+      { label: "Método", href: "/#metodo" },
+    ],
+  },
+  {
+    label: "Especialidades",
+    items: [
+      { label: "Backend", href: "/backend/", core: true },
+      { label: "Arquitectura", href: "/arquitectura/" },
+      { label: "Mentoría", href: "/mentoria/" },
+      { label: "Docencia", href: "/docencia/" },
+    ],
+  },
+  {
+    label: "Capacidades complementarias",
+    items: [
+      { label: "Frontend", href: "/frontend/" },
+      { label: "Mobile", href: "/mobile/" },
+      { label: "Herramientas con IA", href: "/ai/" },
+    ],
+  },
+  {
+    label: "Trayectoria",
+    items: [
+      { label: "Experiencia", href: "/experiencia/" },
+      { label: "Stack", href: "/#stack" },
+      { label: "Certificaciones", href: "/certificaciones/" },
+    ],
+  },
+  {
+    label: "Proyectos",
+    items: [
+      { label: "Casos", href: "/casos/" },
+      { label: "KeyGo", href: "/keygo/" },
+      { label: "Videojuegos", href: "/videojuegos/" },
+    ],
+  },
+  {
+    label: "Recursos y contacto",
+    items: [
+      { label: "Alianzas", href: "/#alianzas" },
+      { label: "Recursos", href: "/recursos/" },
+      { label: "Contacto", href: "/contacto/" },
+    ],
+  },
 ];
 
 export const pageAnchors: Record<string, NavAnchor[]> = {
