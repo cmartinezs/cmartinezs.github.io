@@ -1,0 +1,50 @@
+.localNav {
+  position: fixed;
+  top: var(--header-offset);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: rgba(8, 17, 31, 0.92);
+  border-bottom: 1px solid var(--panel-border);
+  backdrop-filter: blur(14px);
+  transition: top 300ms ease;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  height: 3rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.inner::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .inner {
+    padding-inline: 1rem;
+  }
+}
+
+.link {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.35rem;
+  white-space: nowrap;
+  transition: color 150ms ease, background 150ms ease;
+  flex-shrink: 0;
+}
+
+.link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}

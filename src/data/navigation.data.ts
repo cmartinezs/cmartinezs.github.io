@@ -1,8 +1,3 @@
-export interface NavPage {
-  label: string;
-  href: string;
-}
-
 export interface NavAnchor {
   href: string;
   label: string;
@@ -15,59 +10,73 @@ export interface NavItem {
 }
 
 export interface NavGroup {
+  id: string;
   label: string;
+  path: string;
   items: NavItem[];
 }
 
 export const navGroups: NavGroup[] = [
   {
-    label: "Principal",
+    id: "inicio",
+    label: "Inicio",
+    path: "/",
     items: [
-      { label: "Inicio", href: "/" },
+      { label: "Inicio", href: "/#inicio" },
       { label: "Perfil", href: "/#perfil" },
       { label: "Servicios", href: "/#servicios" },
       { label: "Método", href: "/#metodo" },
     ],
   },
   {
-    label: "Especialidades",
-    items: [
-      { label: "Backend", href: "/backend/", core: true },
-      { label: "Arquitectura", href: "/arquitectura/" },
-      { label: "Mentoría", href: "/mentoria/" },
-      { label: "Docencia", href: "/docencia/" },
-    ],
-  },
-  {
-    label: "Capacidades complementarias",
-    items: [
-      { label: "Frontend", href: "/frontend/" },
-      { label: "Mobile", href: "/mobile/" },
-      { label: "Herramientas con IA", href: "/ai/" },
-    ],
-  },
-  {
+    id: "trayectoria",
     label: "Trayectoria",
+    path: "/trayectoria/",
     items: [
-      { label: "Experiencia", href: "/#experiencia" },
-      { label: "Stack", href: "/#stack" },
-      { label: "Certificaciones", href: "/#certificaciones" },
+      { label: "Experiencia", href: "/trayectoria/#experiencia" },
+      { label: "Stack", href: "/trayectoria/#stack" },
+      { label: "Certificaciones", href: "/trayectoria/#certificaciones" },
     ],
   },
   {
+    id: "especialidades",
+    label: "Especialidades",
+    path: "/especialidades/",
+    items: [
+      { label: "Backend", href: "/especialidades/#backend", core: true },
+      { label: "Arquitectura", href: "/especialidades/#arquitectura" },
+      { label: "Mentoría", href: "/especialidades/#mentoria" },
+      { label: "Docencia", href: "/especialidades/#docencia" },
+    ],
+  },
+  {
+    id: "proyectos",
     label: "Proyectos",
+    path: "/proyectos/",
     items: [
-      { label: "Casos", href: "/#casos" },
-      { label: "KeyGo", href: "/#keygo" },
-      { label: "Videojuegos", href: "/#videojuegos" },
+      { label: "Casos", href: "/proyectos/#casos" },
+      { label: "KeyGo", href: "/proyectos/#keygo" },
+      { label: "Videojuegos", href: "/proyectos/#videojuegos" },
     ],
   },
   {
-    label: "Recursos y contacto",
+    id: "capacidades",
+    label: "Capacidades",
+    path: "/capacidades/",
     items: [
-      { label: "Alianzas", href: "/#alianzas" },
-      { label: "Recursos", href: "/#recursos" },
-      { label: "Contacto", href: "/#contacto" },
+      { label: "Frontend", href: "/capacidades/#frontend" },
+      { label: "Mobile", href: "/capacidades/#mobile" },
+      { label: "Herramientas con IA", href: "/capacidades/#herramientas-ia" },
+    ],
+  },
+  {
+    id: "recursos-contacto",
+    label: "Recursos y contacto",
+    path: "/recursos-contacto/",
+    items: [
+      { label: "Alianzas", href: "/recursos-contacto/#alianzas" },
+      { label: "Recursos", href: "/recursos-contacto/#recursos" },
+      { label: "Contacto", href: "/recursos-contacto/#contacto" },
     ],
   },
 ];
@@ -78,10 +87,31 @@ export const pageAnchors: Record<string, NavAnchor[]> = {
     { href: "#perfil", label: "Perfil" },
     { href: "#servicios", label: "Servicios" },
     { href: "#metodo", label: "Método" },
-    { href: "#casos", label: "Casos" },
-    { href: "#stack", label: "Stack" },
+  ],
+  "/especialidades/": [
+    { href: "#backend", label: "Backend" },
+    { href: "#arquitectura", label: "Arquitectura" },
+    { href: "#mentoria", label: "Mentoría" },
+    { href: "#docencia", label: "Docencia" },
+  ],
+  "/capacidades/": [
+    { href: "#frontend", label: "Frontend" },
+    { href: "#mobile", label: "Mobile" },
+    { href: "#herramientas-ia", label: "Herramientas con IA" },
+  ],
+  "/trayectoria/": [
     { href: "#experiencia", label: "Experiencia" },
+    { href: "#stack", label: "Stack" },
+    { href: "#certificaciones", label: "Certificaciones" },
+  ],
+  "/proyectos/": [
+    { href: "#casos", label: "Casos" },
+    { href: "#keygo", label: "KeyGo" },
+    { href: "#videojuegos", label: "Videojuegos" },
+  ],
+  "/recursos-contacto/": [
     { href: "#alianzas", label: "Alianzas" },
+    { href: "#recursos", label: "Recursos" },
     { href: "#contacto", label: "Contacto" },
   ],
   "/casos/": [

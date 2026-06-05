@@ -1,85 +1,147 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
-import { navGroups, pageAnchors } from "@/data/navigation.data";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { navGroups } from "@/data/navigation.data";
 import { cn } from "@/lib/cn";
 import styles from "./Navbar.module.css";
 
 export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [explorarOpen, setExplorarOpen] = useState(false);
+  const [openGroupId, setOpenGroupId] = useState<string | null>(null);
+  const [visible, setVisible] = useState(true);
+  const navRef = useRef<HTMLElement>(null);
 
-  const sectionLinks = pageAnchors[pathname] ?? [];
-  const explorarRef = useRef<HTMLDivElement>(null);
-  const close = () => { setMobileOpen(false); setExplorarOpen(false); };
-
+  // Hide on any scroll, show only at top
   useEffect(() => {
-    if (!explorarOpen) return;
+    const sync = () => {
+      const atTop = window.scrollY === 0;
+      setVisible(atTop);
+      document.documentElement.style.setProperty(
+        "--header-offset",
+        atTop ? "var(--header-height)" : "0px"
+      );
+    };
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", sync);
+      document.documentElement.style.setProperty("--header-offset", "var(--header-height)");
+    };
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    if (!openGroupId) return;
     const handler = (e: MouseEvent) => {
-      if (!explorarRef.current?.contains(e.target as Node)) {
-        setExplorarOpen(false);
+      if (!navRef.current?.contains(e.target as Node)) {
+        setOpenGroupId(null);
       }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
-  }, [explorarOpen]);
+  }, [openGroupId]);
+
+  // First click → open dropdown · Second click → navigate to path
+  const handleGroupClick = useCallback(
+    (groupId: string, groupPath: string) => {
+      if (openGroupId === groupId) {
+        router.push(groupPath);
+        setOpenGroupId(null);
+      } else {
+        setOpenGroupId(groupId);
+      }
+    },
+    [openGroupId, router]
+  );
+
+  const close = () => {
+    setMobileOpen(false);
+    setOpenGroupId(null);
+  };
 
   return (
-    <nav className={styles.nav}>
+    <nav
+      ref={navRef}
+      className={cn(styles.nav, !visible && styles.navHidden)}
+      aria-label="Navegación principal"
+    >
       <div className={styles.inner}>
         <Link href="/" className={styles.brand} onClick={close}>
-          Carlos Martínez
+          <span className={styles.brandBrace} aria-hidden="true">{"{"}</span>
+          {" Carlos Martínez "}
+          <span className={styles.brandBrace} aria-hidden="true">{"}"}</span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* ── Desktop ───────────────────────────────────────────── */}
         <div className={styles.desktopNav}>
-          {sectionLinks.map((link) => (
-            <a key={link.href} href={link.href} className={styles.link}>
-              {link.label}
-            </a>
-          ))}
+          {navGroups.map((group) => {
+            const isOpen = openGroupId === group.id;
+            const isActive =
+              group.path === "/"
+                ? pathname === "/"
+                : pathname.startsWith(group.path);
+            return (
+              <div key={group.id} className={styles.groupWrapper}>
+                <button
+                  className={cn(
+                    styles.link,
+                    (isOpen || isActive) && styles.linkActive
+                  )}
+                  onClick={() => handleGroupClick(group.id, group.path)}
+                  aria-expanded={isOpen}
+                  aria-haspopup="true"
+                  title={
+                    isOpen
+                      ? `Ir a ${group.label}`
+                      : `${group.label} — click de nuevo para ir a la sección`
+                  }
+                >
+                  {group.label}
+                  <span
+                    className={cn(styles.chevron, isOpen && styles.chevronOpen)}
+                    aria-hidden="true"
+                  >
+                    ▾
+                  </span>
+                </button>
 
-          <div
-            ref={explorarRef}
-            className={styles.explorarWrapper}
-          >
-            <button
-              className={styles.link}
-              onClick={() => setExplorarOpen(!explorarOpen)}
-              aria-expanded={explorarOpen}
-            >
-              Secciones ▾
-            </button>
-            {explorarOpen && (
-              <div className={styles.dropdown}>
-                {navGroups.map((group) => (
-                  <div key={group.label} className={styles.dropdownGroup}>
-                    <span className={styles.dropdownGroupLabel}>{group.label}</span>
+                {isOpen && (
+                  <div className={styles.dropdown} role="menu">
                     {group.items.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={cn(
-                          styles.dropdownItem,
-                          pathname === item.href && styles.dropdownItemActive
-                        )}
+                        className={styles.dropdownItem}
+                        role="menuitem"
                         onClick={close}
                       >
                         {item.label}
-                        {item.core && <span className={styles.dropdownItemCore}>core</span>}
+                        {item.core && (
+                          <span className={styles.dropdownItemCore}>core</span>
+                        )}
                       </Link>
                     ))}
+                    <div className={styles.dropdownDivider} aria-hidden="true" />
+                    <Link
+                      href={group.path}
+                      className={styles.dropdownPathLink}
+                      role="menuitem"
+                      onClick={close}
+                    >
+                      Ver {group.label} →
+                    </Link>
                   </div>
-                ))}
+                )}
               </div>
-            )}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Hamburger */}
+        {/* ── Hamburger ─────────────────────────────────────────── */}
         <button
           className={styles.hamburger}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -92,36 +154,29 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ── Mobile menu ───────────────────────────────────────── */}
       {mobileOpen && (
         <div className={styles.mobileMenu}>
-          {sectionLinks.length > 0 && (
-            <>
-              <span className={styles.mobileSectionLabel}>Secciones</span>
-              {sectionLinks.map((link) => (
-                <a key={link.href} href={link.href} className={styles.mobileLink} onClick={close}>
-                  {link.label}
-                </a>
-              ))}
-              <hr className={styles.mobileDivider} />
-            </>
-          )}
           {navGroups.map((group) => (
-            <div key={group.label} className={styles.mobileGroup}>
-              <span className={styles.mobileSectionLabel}>{group.label}</span>
+            <div key={group.id} className={styles.mobileGroup}>
+              <Link
+                href={group.path}
+                className={styles.mobileSectionLink}
+                onClick={close}
+              >
+                {group.label}
+              </Link>
               {group.items.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={cn(
-                    styles.mobileLink,
-                    styles.mobileSub,
-                    pathname === item.href && styles.dropdownItemActive
-                  )}
+                  className={cn(styles.mobileLink, styles.mobileSub)}
                   onClick={close}
                 >
                   {item.label}
-                  {item.core && <span className={styles.dropdownItemCore}>core</span>}
+                  {item.core && (
+                    <span className={styles.dropdownItemCore}>core</span>
+                  )}
                 </Link>
               ))}
             </div>
