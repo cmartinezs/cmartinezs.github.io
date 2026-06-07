@@ -116,9 +116,6 @@ export function ContactForm({ initialTopic = "" }: ContactFormProps) {
               <i className="bi bi-google" aria-hidden="true" /> Abrir en Gmail
             </button>
           </div>
-          <p className="form-note mt-3">
-            El email no está expuesto en el HTML, se reconstruye al hacer click.
-          </p>
         </div>
       </div>
     </div>

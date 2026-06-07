@@ -29,8 +29,12 @@ export default function EspecialidadesPage() {
   return (
     <PageWrapper pageClass="page-especialidades">
       <Navbar />
-      <main style={{ paddingTop: "var(--header-height)" }}>
-        <LocalNav items={localNavItems} />
+      <main>
+        <LocalNav
+          items={localNavItems}
+          homeHref="/especialidades/"
+          homeLabel="Especialidades"
+        />
 
         <PageHeroSection
           eyebrow="Especialidades"

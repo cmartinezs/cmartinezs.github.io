@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
 import { ContactoClient } from "./ContactoClient";
 
@@ -18,6 +19,7 @@ export default function ContactoPage() {
       <main>
         <ContactoClient />
       </main>
+      <Footer />
       <ScrollTop />
     </>
   );

@@ -27,8 +27,12 @@ export default function RecursosContactoPage() {
   return (
     <PageWrapper pageClass="page-recursos-contacto">
       <Navbar />
-      <main style={{ paddingTop: "var(--header-height)" }}>
-        <LocalNav items={localNavItems} />
+      <main>
+        <LocalNav
+          items={localNavItems}
+          homeHref="/recursos-contacto/"
+          homeLabel="Recursos"
+        />
 
         <PageHeroSection
           eyebrow="Recursos y contacto"

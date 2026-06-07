@@ -27,7 +27,7 @@
 }
 
 .brand {
-  font-size: 1.15rem;
+  font-size: 1.86875rem;
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--text);
@@ -35,7 +35,29 @@
   flex-shrink: 0;
   margin-right: 0.75rem;
   display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+}
+
+.brandTitle {
+  display: inline-flex;
   align-items: center;
+}
+
+.brandName {
+  margin-inline: 0.5ch;
+}
+
+.brandSubtitle {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.832rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brandBrace {
@@ -50,6 +72,7 @@
 .desktopNav {
   display: none;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.125rem;
   flex: 1;
 }
@@ -89,6 +112,30 @@
 .linkActive {
   color: var(--primary) !important;
   background: rgba(73, 210, 255, 0.07) !important;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  color: #04111f;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 0.75rem 1.8rem rgba(73, 210, 255, 0.18);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.ctaLink:hover {
+  color: #04111f;
+  transform: translateY(-1px);
+  box-shadow: 0 0.9rem 2rem rgba(73, 210, 255, 0.24);
 }
 
 .chevron {
@@ -247,6 +294,20 @@
 
 .mobileSectionLink:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+.mobileCtaLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.65rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: #04111f;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .mobileLink {

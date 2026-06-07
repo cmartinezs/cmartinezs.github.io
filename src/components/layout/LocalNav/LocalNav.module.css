@@ -26,6 +26,22 @@
   display: none;
 }
 
+.brand {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 0.25rem 0.65rem 0.25rem 0;
+  margin-right: 0.4rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  color: var(--primary);
+}
+
 @media (max-width: 767.98px) {
   .inner {
     padding-inline: 1rem;

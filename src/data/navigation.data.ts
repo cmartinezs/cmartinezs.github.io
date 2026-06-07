@@ -18,14 +18,13 @@ export interface NavGroup {
 
 export const navGroups: NavGroup[] = [
   {
-    id: "inicio",
-    label: "Inicio",
-    path: "/",
+    id: "profesional",
+    label: "Profesional",
+    path: "/profesional/",
     items: [
-      { label: "Inicio", href: "/#inicio" },
-      { label: "Perfil", href: "/#perfil" },
-      { label: "Servicios", href: "/#servicios" },
-      { label: "Método", href: "/#metodo" },
+      { label: "Servicios", href: "/profesional/#servicios" },
+      { label: "Método", href: "/profesional/#metodo" },
+      { label: "Explorar", href: "/profesional/#explorar" },
     ],
   },
   {
@@ -60,18 +59,8 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
-    id: "capacidades",
-    label: "Capacidades",
-    path: "/capacidades/",
-    items: [
-      { label: "Frontend", href: "/capacidades/#frontend" },
-      { label: "Mobile", href: "/capacidades/#mobile" },
-      { label: "Herramientas con IA", href: "/capacidades/#herramientas-ia" },
-    ],
-  },
-  {
     id: "recursos-contacto",
-    label: "Recursos y contacto",
+    label: "Recursos",
     path: "/recursos-contacto/",
     items: [
       { label: "Alianzas", href: "/recursos-contacto/#alianzas" },
@@ -83,10 +72,12 @@ export const navGroups: NavGroup[] = [
 
 export const pageAnchors: Record<string, NavAnchor[]> = {
   "/": [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#perfil", label: "Perfil" },
+    { href: "#inicio", label: "Portada" },
+  ],
+  "/profesional/": [
     { href: "#servicios", label: "Servicios" },
     { href: "#metodo", label: "Método" },
+    { href: "#explorar", label: "Explorar" },
   ],
   "/especialidades/": [
     { href: "#backend", label: "Backend" },

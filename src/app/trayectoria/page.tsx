@@ -29,8 +29,12 @@ export default function TrayectoriaPage() {
   return (
     <PageWrapper pageClass="page-trayectoria">
       <Navbar />
-      <main style={{ paddingTop: "var(--header-height)" }}>
-        <LocalNav items={localNavItems} />
+      <main>
+        <LocalNav
+          items={localNavItems}
+          homeHref="/trayectoria/"
+          homeLabel="Trayectoria"
+        />
 
         <PageHeroSection
           eyebrow="Trayectoria"

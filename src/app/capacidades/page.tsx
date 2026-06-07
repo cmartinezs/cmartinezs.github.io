@@ -27,8 +27,12 @@ export default function CapacidadesPage() {
   return (
     <PageWrapper pageClass="page-capacidades">
       <Navbar />
-      <main style={{ paddingTop: "var(--header-height)" }}>
-        <LocalNav items={localNavItems} />
+      <main>
+        <LocalNav
+          items={localNavItems}
+          homeHref="/capacidades/"
+          homeLabel="Capacidades"
+        />
 
         <PageHeroSection
           eyebrow="Capacidades complementarias"

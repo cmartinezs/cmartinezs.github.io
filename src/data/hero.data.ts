@@ -14,7 +14,7 @@ export const heroContent: HeroContent = {
     },
     {
       label: "Ver casos",
-      href: "#casos",
+      href: "/proyectos/#casos",
       variant: "secondary",
       icon: "bi-kanban-fill",
     },

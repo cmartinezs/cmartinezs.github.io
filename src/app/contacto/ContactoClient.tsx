@@ -38,8 +38,8 @@ function ContactoInner() {
                 />
               </div>
             </div>
-            <div className="lg:col-span-7" id="formulario">
-              <div className="glass-card">
+            <div className="lg:col-span-7 contacto-form-side" id="formulario">
+              <div className="glass-card contacto-form-card">
                 <ContactForm initialTopic={topic} />
               </div>
             </div>

@@ -64,7 +64,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-offset) + var(--local-nav-height) + 1.5rem);
+  scroll-padding-top: calc(var(--local-nav-height) + 0.75rem);
   overflow-x: hidden;
 }
 
@@ -223,6 +223,19 @@ body.page-contacto {
     linear-gradient(180deg, #09101e 0%, #0b1628 48%, #050b14 100%);
 }
 
+.contacto-form-side {
+  align-self: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-form-card {
+  width: 100%;
+  max-width: 42rem;
+  height: auto;
+}
+
 body.page-certificaciones {
   background:
     radial-gradient(circle at 72% 28%, rgba(130, 247, 191, 0.12), transparent 20rem),
@@ -318,9 +331,6 @@ body.page-recursos-contacto::before {
     display: flex;
     align-items: center;
   }
-  body.page-contacto footer {
-    display: none;
-  }
 }
 
 /* ─── Typography ─────────────────────────────────────────────────────────── */
@@ -345,7 +355,7 @@ body.page-recursos-contacto::before {
 
 /* ─── Hero ───────────────────────────────────────────────────────────────── */
 .hero {
-  min-height: 92vh;
+  min-height: 100svh;
   padding: 8rem 0 5rem;
   position: relative;
   overflow: hidden;
@@ -362,8 +372,24 @@ body.page-recursos-contacto::before {
 }
 
 .page-hero {
-  min-height: 72vh;
-  padding: 9rem 0 5rem;
+  min-height: 100svh;
+  padding:
+    calc(var(--header-height) + var(--local-nav-height) + clamp(1.75rem, 4vh, 3rem))
+    0
+    clamp(2.5rem, 6vh, 4.5rem);
+  display: flex;
+  align-items: center;
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.page-hero-side {
+  min-width: 0;
 }
 
 .hero-title {
@@ -1005,7 +1031,6 @@ body.page-recursos-contacto::before {
   line-height: 1.5;
 }
 
-/* ─── Profile summary ────────────────────────────────────────────────────── */
 .profile-heading {
   font-size: clamp(1.75rem, 3.2vw, 2.6rem);
   font-weight: 800;
@@ -1176,6 +1201,13 @@ body.page-recursos-contacto::before {
   color: var(--accent);
   background: rgba(130, 247, 191, 0.06);
   font-size: 0.8rem;
+}
+
+@media (max-width: 767.98px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
 }
 
 /* ─── Case studies ───────────────────────────────────────────────────────── */
@@ -1913,6 +1945,30 @@ footer {
   background: rgba(5, 11, 19, 0.55);
 }
 
+/* ─── Home viewport ──────────────────────────────────────────────────────── */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.home-main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.home-main .hero {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+}
+
+.home-page .scroll-top {
+  display: none;
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 767.98px) {
   .hero {
@@ -1920,8 +1976,11 @@ footer {
     padding: 6.75rem 0 3rem;
   }
   .page-hero {
-    min-height: auto;
-    padding: 6.75rem 0 3rem;
+    min-height: 100svh;
+    padding:
+      calc(var(--header-height) + var(--local-nav-height) + 1.5rem)
+      0
+      3rem;
   }
   .section {
     padding: 4rem 0;
@@ -1938,6 +1997,12 @@ footer {
   }
   .hero-side {
     margin-left: 0;
+  }
+  .home-main .hero {
+    padding: 5.75rem 0 1.75rem;
+  }
+  .home-main .hero-side-shell {
+    display: none;
   }
   .services-carousel-toolbar {
     align-items: stretch;

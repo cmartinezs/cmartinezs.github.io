@@ -1,18 +1,24 @@
-Actúa como frontend senior especializado en UX, arquitectura de información, navegación web y landing pages de marca personal técnica.
+> **El menú ya no es solo navegación; es el mapa conceptual del sitio. La página debe ordenarse para responder a ese mapa.**
 
-Necesito mejorar el menú desplegable actual de `Explorar` en mi sitio personal.
+Actúa como frontend senior especializado en UX, arquitectura de información, landing pages y estructura de navegación para marca personal técnica.
+
+El menú desplegable de `Secciones` ya quedó visualmente bien. Ahora necesito que la estructura real de la página concuerde con ese menú.
+
+Importante:
+No quiero simplemente adaptar el menú a las anclas actuales.
+Quiero usar el menú actual como arquitectura objetivo y reorganizar la landing/secciones/anclas para que la página tenga una estructura coherente.
 
 Contexto:
-Mi sitio es una landing profesional de Carlos Martínez Sánchez. El objetivo de la página es funcionar como marca personal, CV profesional y canal para generar consultoría técnica, mentoring, docencia, proyectos backend y alianzas estratégicas.
+Mi sitio personal es una landing profesional de Carlos Martínez Sánchez. Su objetivo es funcionar como marca personal, CV profesional y canal para generar consultoría técnica, mentoring, docencia, proyectos backend y alianzas estratégicas.
 
-Mi posicionamiento principal es:
+Mi foco principal:
 - Backend senior
 - Arquitectura de software
-- Formación técnica / docencia / mentoring
+- Formación técnica, docencia y mentoring
+- Desarrollo de herramientas con y para IA aplicada
 - Experiencia real en sistemas de banca, e-commerce, utilities y plataformas SaaS
 
-Actualmente el menú superior tiene navegación principal:
-
+Menú superior actual:
 - Inicio
 - Perfil
 - Servicios
@@ -21,206 +27,376 @@ Actualmente el menú superior tiene navegación principal:
 - Stack
 - Alianzas
 - Contacto
-- Explorar
+- Secciones
 
-El problema está en el dropdown de `Explorar`.
+Dropdown actual de `Secciones`:
 
-Estado actual del dropdown:
-El menú muestra una lista plana como esta:
-
+Principal
 - Inicio
-- Backend
+- Perfil
+- Servicios
+- Método
+
+Especialidades
+- Backend core
 - Arquitectura
 - Mentoría
 - Docencia
+
+Capacidades complementarias
 - Frontend
 - Mobile
-- AI
+- Herramientas con IA
+
+Trayectoria
 - Experiencia
-- Casos
+- Stack
 - Certificaciones
-- Videojuegos
+
+Proyectos
+- Casos
 - KeyGo
+- Videojuegos
+
+Recursos y contacto
+- Alianzas
 - Recursos
 - Contacto
 
-Problemas detectados:
-1. El menú se siente como un sitemap técnico, no como una navegación estratégica.
-2. Hay demasiados ítems en una sola columna.
-3. Todos los ítems tienen el mismo peso visual.
-4. No existe jerarquía ni agrupación por intención.
-5. Se mezclan servicios, especialidades, proyectos, experiencia y contacto.
-6. `Frontend`, `Mobile` y `AI` aparecen al mismo nivel que `Backend`, lo que puede diluir mi posicionamiento principal.
-7. Hay duplicación con el navbar superior, pero sin una justificación clara.
-8. El menú no ayuda suficientemente a vender mi propuesta profesional.
-9. Visualmente está bien integrado, pero la arquitectura de información es débil.
+Problema:
+Actualmente existen varias anclas en la landing que no están distribuidas de forma coherente con esta arquitectura. Algunas secciones existen, otras podrían estar mezcladas dentro de bloques mayores, y otras quizá necesitan convertirse en subsecciones reales.
 
 Objetivo:
-Convertir `Explorar` en un índice estratégico de navegación interna, ordenado por intención y alineado con mi marca personal.
+Reestructurar la landing para que su arquitectura real coincida con el menú `Secciones`, sin perder diseño, responsive ni navegación.
 
-La idea principal:
-El menú también debe comunicar posicionamiento. No debe ser solo una lista de secciones.
+Regla principal:
+El menú `Secciones` debe representar la estructura lógica real del sitio.
 
-Recomendación conceptual:
-Cambiar el enfoque de `Explorar` desde una lista plana hacia un menú agrupado por categorías.
+No todos los ítems del dropdown tienen que ser secciones gigantes independientes, pero sí deben apuntar a destinos reales y claros:
+- sección principal,
+- subsección,
+- bloque interno,
+- card destacada,
+- módulo dentro de una sección,
+- o ruta real si existe.
 
-Puedes mantener el texto `Explorar` si visualmente funciona, pero evalúa cambiarlo por una opción más clara como:
-- Secciones
-- Índice
+Arquitectura objetivo recomendada:
 
-Preferencia recomendada:
-Usar `Secciones` si queda bien en el navbar, porque comunica mejor que es navegación interna de la landing.
+1. `#inicio`
+   Sección inicial / Hero principal.
+   Debe mantener su rol comercial fuerte:
+- propuesta de valor,
+- backend mantenible,
+- software con criterio,
+- CTA principal.
 
-Nueva arquitectura sugerida del dropdown:
+2. `#perfil`
+   Sección de perfil profesional.
+   Debe profundizar en quién soy:
+- trayectoria,
+- seniority,
+- mirada de arquitectura,
+- docencia aplicada,
+- experiencia en sistemas reales.
 
-Principal
-- Inicio
-- Perfil
-- Servicios
-- Método
+3. `#servicios`
+   Sección contenedora de servicios.
+   Debe actuar como bloque padre de las especialidades principales.
 
-Especialidades
-- Backend
-- Arquitectura
-- Mentoría
-- Docencia
+Dentro de `Servicios`, crear o alinear subsecciones/anclas:
+- `#backend`
+- `#arquitectura`
+- `#mentoria`
+- `#docencia`
 
-Trayectoria
-- Experiencia
-- Stack
-- Certificaciones
+Estas anclas deben existir realmente.
+Pueden ser cards, bloques o subsecciones internas, pero deben poder navegarse correctamente desde el dropdown.
 
-Proyectos
-- Casos
-- KeyGo
-- Videojuegos
+4. `#capacidades`
+   Sección o bloque para capacidades complementarias.
+   No debe competir con Backend/Arquitectura.
 
-Recursos y contacto
-- Alianzas
-- Recursos
-- Contacto
+Dentro de esta sección o dentro de `Stack`, crear/alinear:
+- `#frontend`
+- `#mobile`
+- `#herramientas-ia`
 
-Tratamiento especial:
-`Backend` debe seguir siendo percibido como mi foco principal, pero sin que el menú dependa solo del color activo.
+Importante:
+No usar `AI` como texto suelto.
+Usar preferentemente:
+- `Herramientas con IA`
+  o
+- `IA aplicada`
 
-Si es viable, agregar un pequeño indicador visual discreto para Backend, por ejemplo:
-- Backend Core
-- Backend Principal
-- Backend Foco
+El mensaje debe ser:
+Desarrollo herramientas con y para IA aplicadas a productividad, automatización, docencia, análisis y mejora de procesos técnicos.
 
-No debe verse exagerado ni como un badge invasivo. Debe ser sutil, técnico y profesional.
+No quiero parecer “AI engineer” como foco central. La IA debe aparecer como capacidad aplicada y complementaria.
 
-Sobre Frontend, Mobile y AI:
-No deberían quedar al mismo nivel narrativo que Backend, Arquitectura, Mentoría y Docencia.
+5. `#experiencia`
+   Sección de trayectoria profesional.
+   Debe contener experiencia laboral, industrias, roles o hitos relevantes.
 
-Opciones válidas:
-1. Moverlos dentro de `Stack`.
-2. Agruparlos como parte de una categoría secundaria tipo `Stack complementario`.
-3. Dejarlos fuera del dropdown principal si ya existen dentro de la sección `Stack`.
+6. `#stack`
+   Sección técnica.
+   Debe mostrar tecnologías, herramientas y ecosistema técnico.
+   Puede contener Backend, Frontend, Mobile e IA como stack, pero sin duplicar innecesariamente el contenido de Servicios.
 
-No quiero transmitir que soy “de todo un poco”. Quiero transmitir que mi foco es backend/arquitectura, con experiencia complementaria en otras áreas.
+7. `#certificaciones`
+   Sección o bloque real de certificaciones.
+   Si actualmente no existe contenido suficiente, crear una estructura simple o dejar preparado el bloque de forma sobria.
+   No inventar certificaciones falsas.
 
-Requerimientos de UI:
-1. Mantener la estética actual: fondo oscuro, sobrio, técnico, moderno.
-2. Mantener coherencia visual con el navbar existente.
-3. No agregar dependencias nuevas.
-4. No romper navegación por anchors.
-5. No romper responsive.
-6. Evitar una lista excesivamente larga en una sola columna.
-7. Usar una estructura más clara, idealmente con secciones internas, headings pequeños o separadores.
-8. En desktop, evaluar un dropdown más ancho con 2 columnas.
-9. En pantallas pequeñas, el menú debe seguir siendo legible y cómodo.
-10. El menú no debe generar overflow horizontal.
-11. Los ítems deben tener buen espaciado vertical.
-12. Los títulos de grupo deben diferenciarse de los enlaces.
-13. El estado activo debe ser claro, pero no confundirlo con hover.
-14. El hover debe ser sutil y consistente con el diseño actual.
-15. El dropdown debe sentirse como parte profesional del sistema visual, no como un menú improvisado.
+8. `#casos`
+   Sección de casos/proyectos.
+   Debe actuar como contenedor de casos reales, proyectos o iniciativas destacadas.
 
-Diseño visual sugerido en desktop:
-Usar dropdown de 2 columnas o grid compacto.
+Dentro de `Casos` o `Proyectos`, crear/alinear:
+- `#keygo`
+- `#videojuegos`
 
-Ejemplo conceptual:
+Importante:
+KeyGo y Videojuegos deben percibirse como proyectos, casos, laboratorio o exploraciones, no como servicios principales.
 
-Principal
-- Inicio
-- Perfil
-- Servicios
-- Método
+9. `#metodo`
+   Sección de método de trabajo.
+   Debe explicar cómo trabajo:
+- diagnóstico,
+- diseño técnico,
+- implementación,
+- acompañamiento,
+- mejora continua,
+- transferencia de conocimiento.
 
-Especialidades
-- Backend  Core
-- Arquitectura
-- Mentoría
-- Docencia
+10. `#alianzas`
+    Sección orientada a colaboración.
+    Debe hablar de alianzas estratégicas, proyectos, colaboración con empresas, instituciones o equipos.
 
-Trayectoria
-- Experiencia
-- Stack
-- Certificaciones
+11. `#recursos`
+    Sección o bloque de recursos.
+    Puede contener publicaciones, material docente, artículos, repositorios, guías o contenido técnico.
+    Si todavía no hay contenido suficiente, dejar una estructura mínima bien integrada.
 
-Proyectos
-- Casos
-- KeyGo
-- Videojuegos
+12. `#contacto`
+    Sección de cierre y contacto.
+    Debe tener CTA claro.
 
-Recursos y contacto
-- Alianzas
-- Recursos
-- Contacto
+Orden recomendado de la landing:
+1. Inicio
+2. Perfil
+3. Servicios
+   - Backend
+   - Arquitectura
+   - Mentoría
+   - Docencia
+4. Método
+5. Casos / Proyectos
+   - KeyGo
+   - Videojuegos
+6. Stack / Capacidades
+   - Frontend
+   - Mobile
+   - Herramientas con IA
+7. Experiencia
+8. Certificaciones
+9. Alianzas
+10. Recursos
+11. Contacto
 
-Puedes ajustar nombres si ya existen anchors o constantes definidas, pero mantén la intención.
+Puedes ajustar el orden si el proyecto actual ya tiene una narrativa mejor, pero debe haber coherencia entre:
+- navbar superior,
+- dropdown `Secciones`,
+- orden visual de la landing,
+- ids/anclas,
+- scroll spy,
+- contenido real.
 
 Requerimientos técnicos:
-1. Revisar primero la implementación actual del navbar y dropdown.
-2. Identificar archivos relacionados antes de modificar.
-3. Si existe un archivo de datos/configuración de navegación, mover ahí la nueva estructura.
-4. Si la navegación está hardcodeada, refactorizar solo lo necesario para que quede clara y mantenible.
-5. Mantener tipado si el proyecto usa TypeScript.
-6. No modificar secciones no relacionadas.
-7. No cambiar rutas, ids o anchors salvo que sea estrictamente necesario.
-8. Si cambias nombres visibles, mantener los `href`/anchors correctos.
-9. Verificar que `Inicio`, `Perfil`, `Servicios`, `Casos`, `Método`, `Stack`, `Alianzas`, `Contacto` sigan funcionando.
-10. Verificar que el estado activo de sección siga funcionando si existe scroll spy o lógica similar.
-11. No introducir lógica compleja innecesaria.
-12. No agregar librerías de UI.
-13. Mantener accesibilidad básica:
-- navegación por teclado si ya existe,
-- aria-expanded si corresponde,
-- roles adecuados si ya se usan,
-- foco visible,
-- cierre del menú al hacer click en un enlace.
 
-Comportamiento esperado:
-- Al abrir el menú, el usuario entiende rápidamente cómo está organizada la página.
-- El menú no abruma.
-- El foco profesional queda claro.
-- Backend/Arquitectura/Formación técnica se perciben como el eje principal.
-- Casos, KeyGo y Videojuegos aparecen como proyectos/trayectoria, no como servicios principales.
-- Contacto y alianzas quedan disponibles, pero no mezclados con especialidades técnicas.
-- El menú refuerza la narrativa de marca personal.
+1. Revisar primero:
+- componente Navbar/Header,
+- dropdown de Secciones,
+- configuración de navegación si existe,
+- componentes de secciones,
+- ids actuales,
+- anclas actuales,
+- scroll spy si existe,
+- estilos globales relacionados con secciones.
+
+2. Crear o consolidar una fuente única de verdad para navegación.
+   Si existe navegación duplicada, refactorizar de forma moderada.
+
+Estructura sugerida:
+
+```ts
+type NavItem = {
+  label: string;
+  href: string;
+  id?: string;
+  description?: string;
+  isCore?: boolean;
+};
+
+type NavGroup = {
+  title: string;
+  items: NavItem[];
+};
+```
+O usar una estructura equivalente compatible con el proyecto.
+
+3. Diferenciar entre:
+* navegación principal del navbar,
+* navegación extendida del dropdown,
+* subsecciones internas.
+
+Ejemplo:
+El navbar puede tener solo:
+
+* Inicio
+* Perfil
+* Servicios
+* Casos
+* Método
+* Stack
+* Alianzas
+* Contacto
+* Secciones
+
+Pero el dropdown debe permitir navegar a subsecciones:
+
+* Backend
+* Arquitectura
+* Mentoría
+* Docencia
+* Frontend
+* Mobile
+* Herramientas con IA
+* KeyGo
+* Videojuegos
+* Recursos
+* Certificaciones
+
+4. Si una subsección no existe, crearla o integrarla donde corresponde. No dejar enlaces muertos.
+5. Si una ancla actual tiene otro nombre pero representa lo mismo, renombrar/alinear si no rompe nada.
+6. Mantener anchors semánticos y consistentes:
+* #inicio
+* #perfil
+* #servicios
+* #backend
+* #arquitectura
+* #mentoria
+* #docencia
+* #metodo
+* #casos
+* #keygo
+* #videojuegos
+* #stack
+* #frontend
+* #mobile
+* #herramientas-ia
+* #experiencia
+* #certificaciones
+* #alianzas
+* #recursos
+* #contacto
+7. Revisar scroll con header sticky/fixed.
+
+Usar scroll-margin-top o solución equivalente para que las secciones no queden tapadas.
+
+8. Mantener el criterio visual de secciones de pantalla completa o casi completa cuando aplique. 
+
+Las secciones principales deben sentirse como bloques sólidos.
+
+No quiero que una sección se vea débil o que la siguiente aparezca accidentalmente asomada por mal uso del alto.
+
+9. Usar una clase reutilizable para secciones principales si corresponde:
+* .landing-section
+* .section-screen
+* .section-block
+
+o equivalente.
+
+10. Las subsecciones internas no necesariamente deben medir toda la pantalla.
+
+Pero sí deben tener suficiente espacio, jerarquía y destino de navegación claro.
+11. No agregar dependencias nuevas.
+12. No romper responsive.
+13. No romper build/lint.
+14. No inventar datos profesionales falsos.
+
+Si falta contenido real, crear placeholders sobrios o estructuras listas para completar, sin afirmar cosas no existentes.
+
+Criterios de arquitectura de información:
+
+* Inicio vende la propuesta.
+* Perfil construye confianza.
+* Servicios explica cómo ayudo.
+* Especialidades profundiza en mis servicios principales.
+* Capacidades complementarias muestra amplitud sin diluir foco.
+* Método explica cómo trabajo.
+* Casos/Proyectos demuestra aplicación real.
+* Stack valida capacidad técnica.
+* Experiencia valida trayectoria.
+* Certificaciones complementa credibilidad.
+* Alianzas abre colaboración.
+* Recursos aporta valor.
+* Contacto convierte.
+
+Criterios visuales:
+
+* Mantener fondo oscuro, estética técnica, sobria y moderna.
+* Mantener coherencia con el diseño actual.
+* No rediseñar todo desde cero si no es necesario.
+* Mejorar distribución del contenido si hay secciones apagadas o con exceso de vacío.
+* Usar cards, badges, métricas o bloques visuales cuando ayuden a ordenar.
+* Mantener buena jerarquía visual entre secciones principales y subsecciones.
+* Evitar que todas las secciones se sientan iguales.
+* Mantener consistencia, pero con ritmo visual.
 
 Criterios de aceptación:
-- El dropdown deja de ser una lista plana.
-- Los ítems están agrupados por intención.
-- El menú se ve bien en desktop y mobile.
-- No hay overflow horizontal.
-- No se rompe el navbar.
-- No se rompen anchors ni navegación.
-- El foco backend/arquitectura/docencia queda más claro.
-- Frontend/Mobile/AI dejan de competir visualmente con el foco principal.
-- El menú se siente más profesional y estratégico.
-- El build/lint pasa sin errores.
-- El código queda limpio, mantenible y sin duplicación innecesaria.
+
+* El menú Secciones coincide con la estructura real del sitio.
+* Todos los ítems del dropdown navegan a anclas o rutas reales.
+* Las anclas están distribuidas de forma lógica según la arquitectura del menú.
+* El navbar superior sigue funcionando.
+* El dropdown sigue visualmente igual o mejor.
+* No hay enlaces muertos.
+* No hay ids duplicados.
+* No hay overflow horizontal.
+* El scroll a cada sección funciona bien con el header.
+* Inicio conserva su fuerza.
+* Perfil complementa a Inicio.
+* Servicios contiene correctamente Backend, Arquitectura, Mentoría y Docencia.
+* Frontend, Mobile e IA quedan como capacidades complementarias.
+* Herramientas con IA queda integrado sin competir con Backend.
+* KeyGo y Videojuegos quedan como proyectos/casos/laboratorio.
+* Método, Stack, Experiencia, Certificaciones, Alianzas, Recursos y Contacto tienen destino real.
+* El sitio se entiende mejor como marca personal y herramienta comercial.
+* Build/lint pasan sin errores.
 
 Entrega esperada:
-1. Primero revisa los archivos actuales relacionados con navegación/dropdown.
-2. Dime brevemente qué archivos vas a tocar.
+
+Antes de modificar:
+
+1. Revisa los archivos actuales.
+2. Entrega un diagnóstico breve:
+   * secciones actuales encontradas,
+   * anclas actuales encontradas,
+   * anclas faltantes,
+   * duplicidades,
+   * inconsistencias con el menú actual,
+   * propuesta de estructura final.
+
+Luego:
 3. Aplica los cambios.
-4. Al final entrega:
-    - Lista de archivos modificados.
-    - Resumen breve de cambios.
-    - Decisiones de arquitectura de información.
-    - Decisiones visuales.
-    - Consideraciones responsive.
-    - Confirmación de build/lint.
+
+Al finalizar:
+4. Entrega:
+
+lista de archivos modificados,
+estructura final de la landing,
+estructura final del menú,
+mapa de anclas final,
+cambios visuales realizados,
+decisiones de arquitectura de información,
+confirmación de build/lint.

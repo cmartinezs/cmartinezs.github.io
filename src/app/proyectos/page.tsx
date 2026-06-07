@@ -29,8 +29,12 @@ export default function ProyectosPage() {
   return (
     <PageWrapper pageClass="page-proyectos">
       <Navbar />
-      <main style={{ paddingTop: "var(--header-height)" }}>
-        <LocalNav items={localNavItems} />
+      <main>
+        <LocalNav
+          items={localNavItems}
+          homeHref="/proyectos/"
+          homeLabel="Proyectos"
+        />
 
         <PageHeroSection
           eyebrow="Proyectos"

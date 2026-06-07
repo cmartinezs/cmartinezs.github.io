@@ -10,9 +10,11 @@ export interface LocalNavItem {
 
 interface LocalNavProps {
   items: LocalNavItem[];
+  homeHref?: string;
+  homeLabel?: string;
 }
 
-export function LocalNav({ items }: LocalNavProps) {
+export function LocalNav({ items, homeHref, homeLabel }: LocalNavProps) {
   useEffect(() => {
     document.documentElement.style.setProperty("--local-nav-height", "3rem");
     return () => {
@@ -23,6 +25,11 @@ export function LocalNav({ items }: LocalNavProps) {
   return (
     <nav className={styles.localNav} aria-label="Navegación de sección">
       <div className={styles.inner}>
+        {homeHref && homeLabel && (
+          <a href={homeHref} className={styles.brand}>
+            {homeLabel}
+          </a>
+        )}
         {items.map((item) => (
           <a key={item.href} href={item.href} className={styles.link}>
             {item.label}
