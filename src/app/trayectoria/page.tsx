@@ -52,11 +52,11 @@ export default function TrayectoriaPage() {
           <div className="container">
             <div className="flex flex-wrap gap-4">
               <Link className="card-link-custom" href="/especialidades/">
-                Ver especialidades →
-              </Link>
+                Ver especialidades
+</Link>
               <Link className="card-link-custom" href="/proyectos/">
-                Ver proyectos →
-              </Link>
+                Ver proyectos
+</Link>
             </div>
           </div>
         </div>

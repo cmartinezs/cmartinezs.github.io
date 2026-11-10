@@ -38,8 +38,8 @@ export function ServicesSection() {
         </div>
         <div className="mt-4">
           <Link className="card-link-custom" href="/especialidades/">
-            Ver todas las especialidades →
-          </Link>
+            Ver todas las especialidades
+</Link>
         </div>
 
         {/* ── Capacidades complementarias ─────────────────────────── */}
@@ -56,8 +56,8 @@ export function ServicesSection() {
           </div>
           <div className="mt-4">
             <Link className="card-link-custom" href="/capacidades/">
-              Ver capacidades complementarias →
-            </Link>
+              Ver capacidades complementarias
+</Link>
           </div>
         </div>
       </div>

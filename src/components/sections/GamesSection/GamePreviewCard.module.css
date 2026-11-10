@@ -1,0 +1,51 @@
+.artwork {
+  --game-art: #74c5ec;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 226px;
+  padding: 20px 22px 18px;
+  color: var(--game-art);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  background: radial-gradient(ellipse at 65% 50%, color-mix(in srgb,var(--game-art) 17%,transparent),transparent 60%), linear-gradient(140deg, #101e2d, #07111f);
+}
+.artwork::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(90deg,transparent,black);
+}
+.starborne_voyager { --game-art: #8cc5ff; }
+.web_game_prototypes { --game-art: #b6a2ff; }
+.lab_lights_web { --game-art: #7df0d6; }
+.neon_pursuit { --game-art: #f59cca; }
+.topline {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  color:#b2c4d2;
+  font-size:10px;
+  letter-spacing:.1em;
+  font-family:var(--font-jetbrains-mono),monospace;
+}
+.topline span:last-child { color:var(--game-art); }
+.visual {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:132px;
+  margin:0 auto;
+  width:100%;
+}
+.visual svg { width:min(320px,100%); max-height:130px; filter: drop-shadow(0 0 18px color-mix(in srgb,var(--game-art) 28%,transparent)); }
+.artworkTitle { font-size:15px; letter-spacing:-.02em; color:#e9f2fb; }
+.meta { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-bottom:12px; font:10px var(--font-jetbrains-mono),monospace; color:#9baebc; }
+.availability { font-size:12px; color:var(--muted); margin:0; }
+@media (prefers-reduced-motion:reduce) { .artwork * { animation:none !important; } }

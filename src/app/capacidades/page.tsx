@@ -84,8 +84,8 @@ export default function CapacidadesPage() {
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
               <Link className="card-link-custom" href="/recursos-contacto/#contacto">
-                Hablemos de frontend →
-              </Link>
+                Hablemos de frontend
+</Link>
             </div>
           </div>
         </section>
@@ -136,8 +136,8 @@ export default function CapacidadesPage() {
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
               <Link className="card-link-custom" href="/recursos-contacto/#contacto">
-                Hablemos de mobile →
-              </Link>
+                Hablemos de mobile
+</Link>
             </div>
           </div>
         </section>
@@ -193,8 +193,8 @@ export default function CapacidadesPage() {
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
               <Link className="card-link-custom" href="/recursos-contacto/#contacto">
-                Hablemos de IA aplicada →
-              </Link>
+                Hablemos de IA aplicada
+</Link>
             </div>
           </div>
         </section>

@@ -52,11 +52,11 @@ export default function ProyectosPage() {
           <div className="container">
             <div className="flex flex-wrap gap-4">
               <Link className="card-link-custom" href="/especialidades/">
-                Ver especialidades →
-              </Link>
+                Ver especialidades
+</Link>
               <Link className="card-link-custom" href="/trayectoria/">
-                Ver trayectoria →
-              </Link>
+                Ver trayectoria
+</Link>
             </div>
           </div>
         </div>
