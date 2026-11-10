@@ -1,8 +1,8 @@
-# Portfolio — Visual assets & publication audit (2026-11-10)
+| Neon Pursuit | Private ADÜMÜN repository | Private | [adumun.github.io/neon-pursuit](https://adumun.github.io/neon-pursuit/) — Pages workflow present; runtime smoke test pending | Public demo, private source |
 
 > Scope: the public portfolio and its showcased ADÜMÜN projects. This is **not** an inventory of every internal ADÜMÜN repository.
 > Sources: current portfolio source, GitHub repository metadata and project README/configuration. 
-> Runtime availability was not independently checked through HTTP in this environment. The owner confirmed the ADÜMÜN Pages URL convention and the Lab Lights URL; the other game repositories have explicit Pages deployment workflows, but their current live responses still need smoke tests.
+> Runtime HTTP responses were not independently checked in this environment. The owner confirmed the ADÜMÜN Pages URL convention and Lab Lights URL; Starborne Voyager, Web Game Prototypes and Neon Pursuit each have explicit Pages deployment workflows, but their current live responses still need smoke tests.
 
 ## Confirmed defects and fixes
 
@@ -32,7 +32,7 @@
 ## Deployment/source observations
 
 - Personal portfolio: the repository has a GitHub Pages deployment workflow on \`master\`, building the Next.js static export.
-- Lab Lights: \`.github/workflows/deploy-pages.yml\` builds with \`BASE_PATH: /${{ github.event.repository.name }}/\` and deploys to Pages. The owner confirmed the resulting URL convention and this repository's URL: \`https://adumun.github.io/lab-lights-web/\`.
+- Lab Lights: `.github/workflows/deploy-pages.yml` builds with `BASE_PATH: /${{ github.event.repository.name }}/` and deploys to Pages. The owner confirmed the resulting URL convention and this repository's URL: `https://adumun.github.io/lab-lights-web/`.
 - GradeOps AI: site is Astro (\`site/package.json\`); observed GitHub Pages workflow triggers on \`master\`, while repository default branch is \`develop\`. Inspect actual release branch and workflow history before treating site as live.
 - KeyGo UI: Vite SPA; no deployment at the conventional \`.github/workflows/deploy.yml\` path was confirmed. Validate IAM/backend and demo safety before making a public deploy.
 - The portfolio's four game URLs formerly used \`cmartinezs.github.io/<project>\`. They now use \`adumun.github.io/<repository-name>\`. Starborne Voyager, Web Game Prototypes and Neon Pursuit each contain a GitHub Pages workflow; their live responses still need a smoke test.
