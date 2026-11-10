@@ -106,8 +106,8 @@ export default function ProfesionalPage() {
                     ))}
                   </div>
                   <Link className="card-link-custom mt-2" href={path.href}>
-                    Explorar {path.label} →
-                  </Link>
+                    Explorar {path.label}
+</Link>
                 </GlassCard>
               ))}
             </div>
