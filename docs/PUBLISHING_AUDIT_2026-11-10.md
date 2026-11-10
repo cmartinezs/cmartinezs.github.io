@@ -11,7 +11,7 @@
 | Double arrows | `.card-link-custom::after` already adds `→`; several labels also included a literal `→` | Remove duplicate glyphs from affected JSX labels |
 | Broken game previews | Cards embedded `cmartinezs.github.io/<project>` URLs that did not point to the ADÜMÜN repositories | Replace unverifiable iframes with local SVG artwork and use canonical ADÜMÜN Pages URLs |
 | Incorrect ownership | Lab Lights source belongs to `adumun/lab-lights-web`, not `cmartinezs` | Use ADÜMÜN ownership and official repository links |
-| Obsolete project promoted | `adumun/claude-planning-with-ai` README marks it DEPRECATED and names Shipping Mode as successor | Keep it historical; do not promote as an active product |
+| Deprecated product reference | `adumun/claude-planning-with-ai` README marks it DEPRECATED and names Shipping Mode as successor; neither appears in the current featured portfolio data | No current portfolio change required; keep any future historical reference clearly labeled |
 
 ## Publication registry — showcased projects
 
@@ -26,7 +26,9 @@
 | KeyGo web UI | `adumun/keygo-web-ui` | Public | Not assigned | No Pages workflow found in the conventional paths inspected; do not invent a demo URL |
 | Academic Grading with AI | `adumun/academic-grading-with-ai` | Public | Not verified | Reference/prototype related to GradeOps AI; inspect publication setup before linking |
 | Claude Planning with AI | `adumun/claude-planning-with-ai` | Public | Not applicable | Deprecated; successor is Shipping Mode |
-| Shipping Mode | `adumun/shipping-mode` | Public | Not applicable | Developer tooling; link source repository, not a demo |
+
+
+Note: Claude Planning with AI is not currently featured by the portfolio; the deprecated repository and its successor are recorded here only as a content-governance check.
 
 ## Deployment/source observations
 
