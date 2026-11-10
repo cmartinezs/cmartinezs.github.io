@@ -11,7 +11,7 @@ export interface GameProject {
   owner: "ADÜMÜN";
   repositoryUrl?: string;
   demoUrl?: string;
-  demoStatus?: "owner-confirmed" | "workflow-configured";
+  demoStatus?: "owner-confirmed" | "publication-pending";
   publicationStatus: "public-source" | "private-development";
   tech: string[];
   techFocus?: string;
@@ -20,8 +20,7 @@ export interface GameProject {
 export const gameProjects: GameProject[] = [
   {
     id: "starborne-voyager",
-    demoStatus: "workflow-configured",
-    demoUrl: "https://adumun.github.io/starborne-voyager/",
+    demoStatus: "publication-pending",
     icon: "★",
     title: "Starborne Voyager",
     description:
@@ -33,8 +32,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "web-game-prototypes",
-    demoStatus: "workflow-configured",
-    demoUrl: "https://adumun.github.io/web-game-prototypes/",
+    demoStatus: "publication-pending",
     icon: "◈",
     title: "Web Game Prototypes",
     description:
@@ -60,8 +58,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "neon-pursuit",
-    demoStatus: "workflow-configured",
-    demoUrl: "https://adumun.github.io/neon-pursuit/",
+    demoStatus: "publication-pending",
     icon: "▶",
     title: "Neon Pursuit",
     description:
