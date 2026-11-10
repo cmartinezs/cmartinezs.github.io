@@ -77,7 +77,7 @@ export function GamePreviewCard({ game }: { game: GameProject }) {
       <div className="flex flex-col flex-1" style={{ padding: "1.25rem 1.5rem 1.5rem" }}>
         <div className={styles.meta}>
           <span>{game.owner}</span>
-          <span>{game.publicationStatus === "public-source" ? "Código público" : "Desarrollo privado"}</span>
+          <span>{game.publicationStatus === "public-source" ? "Código público" : "Código privado"}</span>
         </div>
         <h3 className="h5">{game.title}</h3>
         <p className="text-muted-custom mt-2" style={{ fontSize: "0.9rem", lineHeight: 1.6 }}>
