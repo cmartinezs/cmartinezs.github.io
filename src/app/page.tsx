@@ -30,8 +30,8 @@ const featuredWork = [
     category: "Identidad · Arquitectura",
     description:
       "Diseño de una capacidad de identidad y autenticación para productos digitales, con foco en estándares e integración.",
-    href: "https://github.com/cmartinezs",
-    label: "Explorar GitHub",
+    href: "/keygo/",
+    label: "Conocer KeyGo",
   },
 ];
 
