@@ -22,7 +22,7 @@
 | Starborne Voyager | `adumun/starborne-voyager` | Private | [adumun.github.io/starborne-voyager](https://adumun.github.io/starborne-voyager/) | `.github/workflows/deploy.yml` deploys `dist`; smoke test pending |
 | Web Game Prototypes | `adumun/web-game-prototypes` | Private | [adumun.github.io/web-game-prototypes](https://adumun.github.io/web-game-prototypes/) | `.github/workflows/pages.yml` deploys `dist`; smoke test pending |
 | Neon Pursuit | `adumun/neon-pursuit` | Private | [adumun.github.io/neon-pursuit](https://adumun.github.io/neon-pursuit/) | `.github/workflows/deploy.yml` deploys `dist`; Vite base is `/neon-pursuit/`; smoke test pending |
-| GradeOps AI | `adumun/grade-ops-ai` | Public | `https://adumun.github.io/grade-ops-ai/` (candidate) | Pages workflow exists, but triggers on `master` while default branch is `develop`; verify release flow and runtime before adding to portfolio |
+| GradeOps AI | `adumun/grade-ops-ai` | Public | `https://adumun.github.io/grade-ops-ai/` (pending deploy verification) | Pages workflow publishes `site/dist`; canonical origin fix is proposed in [PR #118](https://github.com/adumun/grade-ops-ai/pull/118) |
 | KeyGo web UI | `adumun/keygo-web-ui` | Public | Not assigned | No Pages workflow found in the conventional paths inspected; do not invent a demo URL |
 | Academic Grading with AI | `adumun/academic-grading-with-ai` | Public | Not verified | Reference/prototype related to GradeOps AI; inspect publication setup before linking |
 | Claude Planning with AI | `adumun/claude-planning-with-ai` | Public | Not applicable | Deprecated; successor is Shipping Mode |
@@ -35,7 +35,7 @@
 - Starborne Voyager: `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `master`; `vite.config.ts` uses `base: "./"`.
 - Web Game Prototypes: `.github/workflows/pages.yml` builds and deploys `dist` on pushes to `master`; `vite.config.ts` uses `base: "./"`.
 - Neon Pursuit: `.github/workflows/deploy.yml` builds and deploys `dist` on pushes to `master`; `vite.config.js` explicitly sets `base: "/neon-pursuit/"`.
-- GradeOps AI: `.github/workflows/deploy.yml` builds the Astro site under `site/` and deploys `site/dist`, but its trigger branch (`master`) differs from the repository default (`develop`).
+- GradeOps AI: `.github/workflows/deploy.yml` builds the Astro site under `site/` and deploys `site/dist` from `master` (a release branch distinct from the default `develop`). The Astro `site` origin and canonical/Open Graph URLs were incorrectly set to `cmartinezs.github.io`; PR [adumun/grade-ops-ai#118](https://github.com/adumun/grade-ops-ai/pull/118) corrects them to `adumun.github.io` while preserving `/grade-ops-ai` as the base path. Build and runtime smoke test remain pending.
 - KeyGo web UI: Vite SPA; no Pages workflow was found in the conventional deployment paths inspected.
 - The four game entries in the portfolio now use `adumun.github.io/<repository-name>` instead of the incorrect `cmartinezs.github.io/<project>` paths. Private source repositories can still serve public Pages demos.
 
