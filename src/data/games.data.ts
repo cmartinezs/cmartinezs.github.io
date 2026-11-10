@@ -47,6 +47,7 @@ export const gameProjects: GameProject[] = [
       "Juego de puzles de luces. Una experiencia web desarrollada con React, TypeScript y Vite.",
     owner: "ADÜMÜN",
     repositoryUrl: "https://github.com/adumun/lab-lights-web",
+    demoUrl: "https://adumun.github.io/lab-lights-web/",
     publicationStatus: "public-source",
     tech: ["TypeScript", "React", "Vite", "Vitest"],
     techFocus: "Interacción y lógica de puzles",
