@@ -1,7 +1,7 @@
 /**
  * Public portfolio catalogue, not the authoritative product registry.
  * ADÜMÜN GitHub Pages follow https://adumun.github.io/<repository-name>.
- * demoStatus separates owner-confirmed URLs from repositories with a Pages workflow only.
+ * demoStatus distinguishes an owner-confirmed public demo from a pending publication.
  */
 export interface GameProject {
   id: string;
