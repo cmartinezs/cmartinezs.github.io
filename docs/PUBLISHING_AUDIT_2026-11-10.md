@@ -2,7 +2,7 @@
 
 > Scope: the public portfolio and its showcased ADÜMÜN projects. This is **not** an inventory of every internal ADÜMÜN repository.
 > Sources: current portfolio source, GitHub repository metadata and project README/configuration. 
-> Runtime availability of remote deployments was **not conclusively verified** in this environment. Screenshots supplied by the site owner visibly showed 404 pages in multiple embeds.
+> Runtime availability was not independently checked through HTTP in this environment. The owner confirmed the ADÜMÜN Pages URL convention and the Lab Lights URL; the other game repositories have explicit Pages deployment workflows, but their current live responses still need smoke tests.
 
 ## Confirmed defects and fixes
 
@@ -11,7 +11,7 @@
 | Empty icons | Bootstrap Icons and Devicon classes remained but the shared stylesheets were removed from \`src/app/layout.tsx\` | Restore both icon stylesheet links immediately; consider vendoring icons later |
 | Double arrows | \`.card-link-custom::after\` already adds \`→\`; several link labels also included \`→\` | Remove duplicate literal glyphs in affected JSX labels |
 | Broken project previews | \`GamePreviewCard\` embedded URLs such as \`cmartinezs.github.io/lab-lights-web\` that are not backed by confirmed deployments | Do not iframe unverifiable apps; render informative local SVG artwork |
-| Incorrect project ownership | Public Lab Lights source is \`adumun/lab-lights-web\`, not a project under \`cmartinezs\` | Add ADÜMÜN ownership and official repository link; do not present private repos as publicly playable |
+| Incorrect project ownership | Public Lab Lights source is \`adumun/lab-lights-web\`, not a project under \`cmartinezs\` | Use ADÜMÜN ownership and canonical Pages URLs; private source does not preclude a public demo |
 | Obsolete project promoted | \`adumun/claude-planning-with-ai\` README marks it DEPRECATED / superseded by Shipping Mode | Update the local (currently uncommitted) portfolio project record before publishing; historical references may remain clearly labeled |
 
 ## Publication registry for showcased initiatives
@@ -20,9 +20,9 @@
 | --- | --- | --- | --- | --- |
 | Personal portfolio | [cmartinezs/cmartinezs.github.io](https://github.com/cmartinezs/cmartinezs.github.io) | Public | GitHub Pages address known; live deployment not independently audited | Keep GitHub Pages pending functional visual QA |
 | Lab Lights | [adumun/lab-lights-web](https://github.com/adumun/lab-lights-web) | Public | [adumun.github.io/lab-lights-web](https://adumun.github.io/lab-lights-web/) — URL pattern confirmed by repository owner | Link playable demo and source repository |
-| Starborne Voyager | \`adumun/starborne-voyager\` | Private | **Not verified** | Showcase as private development, without a false Play button |
-| Web Game Prototypes | \`adumun/web-game-prototypes\` | Private | **Not verified** | Showcase as private experimentation; no public code/deployment link |
-| Neon Pursuit | \`adumun/neon-pursuit\` | Private | **Not verified** | Showcase as private development; no public Play button |
+| Starborne Voyager | Private ADÜMÜN repository | Private | [adumun.github.io/starborne-voyager](https://adumun.github.io/starborne-voyager/) — Pages workflow present; runtime smoke test pending | Public demo, private source |
+| Web Game Prototypes | Private ADÜMÜN repository | Private | [adumun.github.io/web-game-prototypes](https://adumun.github.io/web-game-prototypes/) — Pages workflow present; runtime smoke test pending | Public demo, private source |
+| Neon Pursuit | Private ADÜMÜN repository | Private | [adumun.github.io/neon-pursuit](https://adumun.github.io/neon-pursuit/) — Pages workflow present; runtime smoke test pending | Public demo, private source |
 | GradeOps AI | [adumun/grade-ops-ai](https://github.com/adumun/grade-ops-ai) | Public | **Not verified** | Present as EdTech product in development; site subfolder uses Astro |
 | KeyGo web UI | [adumun/keygo-web-ui](https://github.com/adumun/keygo-web-ui) | Public | **Not verified** | Present as ADÜMÜN identity product, not a personal GitHub repo |
 | Academic Grading with AI | [adumun/academic-grading-with-ai](https://github.com/adumun/academic-grading-with-ai) | Public | **Not verified** | Describe correctly as behavioral/reference prototype for GradeOps AI |
@@ -32,10 +32,10 @@
 ## Deployment/source observations
 
 - Personal portfolio: the repository has a GitHub Pages deployment workflow on \`master\`, building the Next.js static export.
-- Lab Lights: \`vite.config.ts\` provides \`base: process.env.BASE_PATH ?? '/'\`; if deploying under a GitHub Pages subpath, \`BASE_PATH\` must match the actual path. No workflow at \`.github/workflows/deploy.yml\` was found during this audit; do **not** infer that no other deployment exists.
+- Lab Lights: \`.github/workflows/deploy-pages.yml\` builds with \`BASE_PATH: /${{ github.event.repository.name }}/\` and deploys to Pages. The owner confirmed the resulting URL convention and this repository's URL: \`https://adumun.github.io/lab-lights-web/\`.
 - GradeOps AI: site is Astro (\`site/package.json\`); observed GitHub Pages workflow triggers on \`master\`, while repository default branch is \`develop\`. Inspect actual release branch and workflow history before treating site as live.
 - KeyGo UI: Vite SPA; no deployment at the conventional \`.github/workflows/deploy.yml\` path was confirmed. Validate IAM/backend and demo safety before making a public deploy.
-- Current portfolio data used four \`cmartinezs.github.io/<project>\` URLs; those cannot be treated as valid simply because a repository exists under another owner.
+- The portfolio's four game URLs formerly used \`cmartinezs.github.io/<project>\`. They now use \`adumun.github.io/<repository-name>\`. Starborne Voyager, Web Game Prototypes and Neon Pursuit each contain a GitHub Pages workflow; their live responses still need a smoke test.
 - The local developer has uncommitted changes in \`src/data/labProjects.data.ts\`, \`ProjectHighlightSection\`, and \`LabProjectPreviewCard.tsx\` that are **not** in GitHub. Do not overwrite these changes; reconcile that catalogue separately.
 
 ## Decision
@@ -44,7 +44,7 @@
 2. Maintain the personal static portfolio on GitHub Pages while stable.
 3. Consider Cloudflare Pages for standalone **public static demos** where GitHub Pages adds routing/path friction. Keep deployment choices per-product; don't migrate private products by default.
 4. For private/incomplete products, use local artwork or an approved screenshot and a truthful status, never embedded 404 or unverified "Play" links.
-5. If a project obtains a working public URL, add an explicit verified \`demoUrl\` to the portfolio data and test status/embedding constraints before displaying a live preview.
+5. The four game entries now use the ADÜMÜN Pages convention. Lab Lights was explicitly confirmed by the owner; the other three have deploy workflows in their canonical repositories. Complete runtime smoke tests before treating their live demos as fully verified.
 
 ## QA acceptance checklist
 
