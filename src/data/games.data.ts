@@ -19,6 +19,7 @@ export interface GameProject {
 export const gameProjects: GameProject[] = [
   {
     id: "starborne-voyager",
+    demoUrl: "https://adumun.github.io/starborne-voyager/",
     icon: "★",
     title: "Starborne Voyager",
     description:
@@ -30,6 +31,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "web-game-prototypes",
+    demoUrl: "https://adumun.github.io/web-game-prototypes/",
     icon: "◈",
     title: "Web Game Prototypes",
     description:
@@ -54,6 +56,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "neon-pursuit",
+    demoUrl: "https://adumun.github.io/neon-pursuit/",
     icon: "▶",
     title: "Neon Pursuit",
     description:
