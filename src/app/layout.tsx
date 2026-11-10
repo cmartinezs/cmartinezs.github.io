@@ -16,10 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Carlos Martínez | Senior Software Engineer",
-    template: "%s | Carlos Martínez",
-  },
+  title: "Carlos Martínez | Senior Software Engineer",
   description:
     "Senior Software Engineer en Chile. Más de 15 años construyendo software backend, APIs, sistemas distribuidos y productos digitales. Java, Spring Boot, cloud e IA aplicada.",
   metadataBase: new URL("https://cmartinezs.github.io"),
