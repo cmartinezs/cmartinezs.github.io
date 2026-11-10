@@ -19,7 +19,7 @@
 | Initiative | Canonical repository | Repository visibility | Verified demo URL | Portfolio presentation / next step |
 | --- | --- | --- | --- | --- |
 | Personal portfolio | [cmartinezs/cmartinezs.github.io](https://github.com/cmartinezs/cmartinezs.github.io) | Public | GitHub Pages address known; live deployment not independently audited | Keep GitHub Pages pending functional visual QA |
-| Lab Lights | [adumun/lab-lights-web](https://github.com/adumun/lab-lights-web) | Public | **Not verified** | Link code, show static artwork; evaluate Cloudflare Pages for playable demo |
+| Lab Lights | [adumun/lab-lights-web](https://github.com/adumun/lab-lights-web) | Public | [adumun.github.io/lab-lights-web](https://adumun.github.io/lab-lights-web/) — URL pattern confirmed by repository owner | Link playable demo and source repository |
 | Starborne Voyager | \`adumun/starborne-voyager\` | Private | **Not verified** | Showcase as private development, without a false Play button |
 | Web Game Prototypes | \`adumun/web-game-prototypes\` | Private | **Not verified** | Showcase as private experimentation; no public code/deployment link |
 | Neon Pursuit | \`adumun/neon-pursuit\` | Private | **Not verified** | Showcase as private development; no public Play button |
@@ -40,7 +40,7 @@
 
 ## Decision
 
-1. Repair/verify each project in its canonical repository; do not publish under a guessed owner/subpath.
+1. Use the ADÜMÜN Pages convention `https://adumun.github.io/<repository-name>` for repositories whose Pages publication is enabled; derive the slug from the canonical repository, never guess it.
 2. Maintain the personal static portfolio on GitHub Pages while stable.
 3. Consider Cloudflare Pages for standalone **public static demos** where GitHub Pages adds routing/path friction. Keep deployment choices per-product; don't migrate private products by default.
 4. For private/incomplete products, use local artwork or an approved screenshot and a truthful status, never embedded 404 or unverified "Play" links.
