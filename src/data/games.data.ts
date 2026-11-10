@@ -11,6 +11,7 @@ export interface GameProject {
   owner: "ADÜMÜN";
   repositoryUrl?: string;
   demoUrl?: string;
+  demoStatus?: "owner-confirmed" | "workflow-configured";
   publicationStatus: "public-source" | "private-development";
   tech: string[];
   techFocus?: string;
@@ -19,6 +20,7 @@ export interface GameProject {
 export const gameProjects: GameProject[] = [
   {
     id: "starborne-voyager",
+    demoStatus: "workflow-configured",
     demoUrl: "https://adumun.github.io/starborne-voyager/",
     icon: "★",
     title: "Starborne Voyager",
@@ -31,6 +33,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "web-game-prototypes",
+    demoStatus: "workflow-configured",
     demoUrl: "https://adumun.github.io/web-game-prototypes/",
     icon: "◈",
     title: "Web Game Prototypes",
@@ -49,6 +52,7 @@ export const gameProjects: GameProject[] = [
       "Juego de puzles de luces. Una experiencia web desarrollada con React, TypeScript y Vite.",
     owner: "ADÜMÜN",
     repositoryUrl: "https://github.com/adumun/lab-lights-web",
+    demoStatus: "owner-confirmed",
     demoUrl: "https://adumun.github.io/lab-lights-web/",
     publicationStatus: "public-source",
     tech: ["TypeScript", "React", "Vite", "Vitest"],
@@ -56,6 +60,7 @@ export const gameProjects: GameProject[] = [
   },
   {
     id: "neon-pursuit",
+    demoStatus: "workflow-configured",
     demoUrl: "https://adumun.github.io/neon-pursuit/",
     icon: "▶",
     title: "Neon Pursuit",
