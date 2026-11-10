@@ -1,178 +1,197 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollTop } from "@/components/layout/ScrollTop";
+import { HeroSection } from "@/components/sections/HeroSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Senior Software Engineer | Backend, Cloud & Applied AI",
+  title: "Ingeniería, innovación, docencia y productos",
   description:
-    "Carlos Martínez, Senior Software Engineer en Santiago de Chile. Más de 15 años construyendo software backend, APIs, sistemas distribuidos y productos digitales. Java, Spring Boot, cloud e IA aplicada.",
+    "Carlos Martínez: ingeniero de software senior, creador de productos digitales y docente. Explora su experiencia en backend, arquitectura, IA aplicada, formación y proyectos.",
   path: "/",
 });
 
-const featuredWork = [
+const dimensions = [
   {
-    name: "GradeOps AI",
-    category: "EdTech · IA aplicada",
+    number: "01",
+    eyebrow: "Ingeniería",
+    title: "Construir software con criterio",
     description:
-      "Exploración y desarrollo de herramientas inteligentes para apoyar procesos de evaluación y trabajo docente.",
-    href: "https://github.com/cmartinezs/grade-ops-ai",
-    label: "Ver repositorio",
+      "Backend, Java, Spring, APIs, integración y arquitectura. Experiencia práctica diseñando y evolucionando sistemas para problemas reales.",
+    href: "/especialidades/",
+    link: "Explorar especialidades",
+    tags: ["Java & Spring", "Sistemas distribuidos", "Arquitectura"],
+    tone: "engineering",
   },
   {
-    name: "Academic Grading with AI",
-    category: "Experimentación · Python",
+    number: "02",
+    eyebrow: "Innovación e IA",
+    title: "Aplicar tecnología donde aporta valor",
     description:
-      "Proyecto experimental sobre el uso de inteligencia artificial en flujos de evaluación académica.",
-    href: "https://github.com/cmartinezs/academic-grading-with-ai",
-    label: "Ver repositorio",
+      "Inteligencia artificial aplicada, agentes, automatización y experimentación para mejorar productos, procesos y formas de trabajar.",
+    href: "/ai/",
+    link: "Explorar IA aplicada",
+    tags: ["IA aplicada", "Automatización", "Experimentación"],
+    tone: "intelligence",
+  },
+  {
+    number: "03",
+    eyebrow: "Docencia y formación",
+    title: "Compartir conocimiento construyendo",
+    description:
+      "Docencia superior, diseño de experiencias prácticas, materiales técnicos y formación conectada con los desafíos de la industria.",
+    href: "/docencia/",
+    link: "Conocer mi enfoque docente",
+    tags: ["Docencia", "Aprendizaje práctico", "Mentoría"],
+    tone: "education",
+  },
+  {
+    number: "04",
+    eyebrow: "Productos y proyectos",
+    title: "Convertir ideas en experiencias",
+    description:
+      "Productos digitales, laboratorios y videojuegos. Una mirada de producto que conecta tecnología, creatividad y ejecución.",
+    href: "/proyectos/",
+    link: "Ver proyectos y casos",
+    tags: ["ADÜMÜN", "Productos digitales", "Videojuegos"],
+    tone: "products",
+  },
+  {
+    number: "05",
+    eyebrow: "Trayectoria",
+    title: "Experiencia en distintos contextos",
+    description:
+      "Más de 15 años en equipos y organizaciones de distintas industrias, combinando desarrollo hands-on, diseño técnico y colaboración.",
+    href: "/trayectoria/",
+    link: "Ver experiencia y formación",
+    tags: ["15+ años", "Experiencia profesional", "Certificaciones"],
+    tone: "career",
+  },
+];
+
+const selectedInitiatives = [
+  {
+    name: "GradeOps AI",
+    area: "Educación · IA aplicada",
+    description: "Exploración de capacidades de IA para apoyar procesos de evaluación y trabajo docente.",
   },
   {
     name: "KeyGo",
-    category: "Identidad · Arquitectura",
-    description:
-      "Diseño de una capacidad de identidad y autenticación para productos digitales, con foco en estándares e integración.",
-    href: "/keygo/",
-    label: "Conocer KeyGo",
+    area: "Identidad · Plataforma",
+    description: "Diseño y evolución de capacidades de identidad y autenticación para productos digitales.",
   },
-];
-
-const experience = [
-  { company: "Duoc UC", role: "Docente de Ingeniería en Informática", period: "2023 — actual" },
-  { company: "Veolia Chile", role: "Analista Desarrollador I", period: "2024 — 2026" },
-  { company: "Stefanini", role: "Tech Leader", period: "2024" },
-  { company: "Mercado Libre", role: "Senior Software Engineer / Tech Leader", period: "2022 — 2024" },
-  { company: "Globant", role: "Software Designer / Java Developer", period: "2021 — 2022" },
-  { company: "GlobalLogic", role: "Senior Software Engineer / Integration Lead", period: "2019 — 2021" },
-];
-
-const capabilities = [
-  "Java · Spring Boot",
-  "Backend · REST APIs",
-  "Microservices · Kafka",
-  "Software Architecture",
-  "AWS · GCP · Azure",
-  "Docker · Kubernetes",
-  "LLMs · AI-assisted engineering",
-  "React · TypeScript",
+  {
+    name: "Starborne Voyager · Lab Lights",
+    area: "Videojuegos · Experiencias web",
+    description: "Iniciativas de producto que combinan desarrollo web, interacción y exploración creativa.",
+  },
 ];
 
 export default function HomePage() {
   return (
-    <main className="personal-home">
-      <header className="personal-header">
-        <a className="personal-brand" href="#inicio" aria-label="Carlos Martínez, inicio">
-          <span className="personal-mark">CM</span>
-          <span>Carlos Martínez</span>
-        </a>
-        <nav aria-label="Navegación principal" className="personal-nav">
-          <a href="#perfil">Perfil</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <a className="personal-header-link" href="https://github.com/cmartinezs" target="_blank" rel="noreferrer">
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
-      </header>
+    <div className="home-page">
+      <Navbar />
+      <main>
+        <HeroSection />
 
-      <section className="personal-hero" id="inicio">
-        <div className="personal-hero-copy">
-          <p className="personal-kicker"><span className="personal-status" /> Santiago, Chile · Disponible para oportunidades</p>
-          <h1>Construyo software <span>que resuelve problemas reales.</span></h1>
-          <p className="personal-lead">
-            Soy Carlos, Senior Software Engineer con más de 15 años de experiencia en backend,
-            arquitectura e integración de sistemas. Me interesa construir productos útiles,
-            evolucionar plataformas y aplicar IA donde aporta valor.
-          </p>
-          <div className="personal-actions">
-            <a className="personal-button primary" href="mailto:carlos.f.martinez.s@gmail.com">Hablemos <span aria-hidden="true">↗</span></a>
-            <a className="personal-button secondary" href="#proyectos">Ver proyectos</a>
+        <section className="section home-dimensions" aria-labelledby="dimensions-title">
+          <div className="container">
+            <div className="home-section-heading">
+              <div>
+                <span className="eyebrow">Distintas dimensiones, una misma forma de pensar</span>
+                <h2 id="dimensions-title" className="display-heading display-5 mt-3">
+                  Lo que hago y cómo puedo aportar.
+                </h2>
+              </div>
+              <p className="text-muted-custom">
+                Ingeniería, creatividad y aprendizaje se cruzan en mi trabajo. Cada espacio
+                profundiza en una parte distinta de esa experiencia.
+              </p>
+            </div>
+
+            <div className="home-dimension-grid">
+              {dimensions.map((item) => (
+                <Link
+                  className={`home-dimension-card home-dimension-${item.tone}`}
+                  href={item.href}
+                  key={item.number}
+                >
+                  <div className="home-dimension-top">
+                    <span className="home-dimension-number">{item.number}</span>
+                    <span className="home-dimension-eyebrow">{item.eyebrow}</span>
+                  </div>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                  <div className="home-dimension-bottom">
+                    <div className="home-dimension-tags">
+                      {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                    <span className="home-dimension-link">{item.link} <span aria-hidden="true">↗</span></span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="personal-proof">Java & Spring <i /> Sistemas distribuidos <i /> Cloud <i /> IA aplicada</p>
-        </div>
-        <aside className="personal-hero-aside" aria-label="Resumen profesional">
-          <div className="personal-monogram">CM<span>.</span></div>
-          <p className="personal-aside-label">INGENIERÍA DE SOFTWARE</p>
-          <p className="personal-aside-title">Criterio técnico.<br />Ejecución práctica.<br />Foco en producto.</p>
-          <div className="personal-aside-bottom"><span>15+ años</span><span>Experiencia</span></div>
-        </aside>
-      </section>
+        </section>
 
-      <section className="personal-section personal-profile" id="perfil">
-        <div className="personal-section-heading">
-          <p className="personal-eyebrow">01 / PERFIL</p>
-          <h2>Experiencia amplia.<br /><span>Foco en construir.</span></h2>
-        </div>
-        <div className="personal-profile-copy">
-          <p>
-            Mi especialidad es el desarrollo backend con Java y Spring, diseño de APIs,
-            microservicios, integración y sistemas distribuidos. He trabajado en productos y
-            plataformas de sectores como comercio electrónico, banca, servicios y educación.
-          </p>
-          <p>
-            Combino el trabajo hands-on con arquitectura, calidad y colaboración técnica.
-            También soy docente de informática: enseñar me mantiene cerca de los fundamentos
-            y de los desafíos reales de quienes aprenden y utilizan tecnología.
-          </p>
-          <div className="personal-capabilities">
-            {capabilities.map((item) => <span key={item}>{item}</span>)}
+        <section className="section home-collaboration" aria-labelledby="collaboration-title">
+          <div className="container">
+            <div className="home-collaboration-panel">
+              <div className="home-collaboration-intro">
+                <span className="eyebrow">Trabajo de producto</span>
+                <h2 id="collaboration-title" className="display-heading display-5 mt-3">
+                  También construyo en equipo.
+                </h2>
+                <p className="text-muted-custom">
+                  Parte importante de mis iniciativas de producto y tecnología se desarrolla
+                  desde ADÜMÜN. Aquí las presento respetando su identidad y organización,
+                  no como repositorios personales.
+                </p>
+                <a className="btn-outline-custom mt-3 inline-flex" href="https://github.com/adumun" target="_blank" rel="noopener noreferrer">
+                  Explorar ADÜMÜN en GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div className="home-initiative-list">
+                {selectedInitiatives.map((item, index) => (
+                  <article className="home-initiative" key={item.name}>
+                    <span className="home-initiative-number">0{index + 1}</span>
+                    <div>
+                      <span className="home-initiative-area">{item.area}</span>
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="personal-section personal-experience" id="experiencia">
-        <div className="personal-section-heading">
-          <p className="personal-eyebrow">02 / TRAYECTORIA</p>
-          <h2>Experiencia en<br /><span>distintos contextos.</span></h2>
-        </div>
-        <div className="personal-timeline">
-          {experience.map((item) => (
-            <article className="personal-role" key={item.company}>
-              <div><h3>{item.company}</h3><p>{item.role}</p></div>
-              <time>{item.period}</time>
-            </article>
-          ))}
-          <a className="personal-text-link" href="/trayectoria/">Ver trayectoria y formación completa <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
-
-      <section className="personal-section personal-projects" id="proyectos">
-        <div className="personal-projects-heading">
-          <div>
-            <p className="personal-eyebrow">03 / TRABAJO SELECCIONADO</p>
-            <h2>Ideas que pasan<br /><span>a la práctica.</span></h2>
+        <section className="section home-about">
+          <div className="container home-about-inner">
+            <div>
+              <span className="eyebrow">Una mirada transversal</span>
+              <h2 className="display-heading display-5 mt-3">Tecnología, producto y personas.</h2>
+            </div>
+            <div>
+              <p className="text-muted-custom">
+                Soy ingeniero de software y docente. Me interesa entender los problemas antes
+                de elegir soluciones, construir sistemas que puedan evolucionar y compartir
+                conocimiento para que otras personas también puedan hacerlo.
+              </p>
+              <Link className="card-link-custom" href="/contacto/">
+                Conversemos → 
+              </Link>
+            </div>
           </div>
-          <a className="personal-text-link" href="https://github.com/cmartinezs?tab=repositories" target="_blank" rel="noreferrer">
-            Todos los repositorios <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <div className="personal-project-grid">
-          {featuredWork.map((project, index) => (
-            <article className="personal-project" key={project.name}>
-              <span className="personal-project-number">0{index + 1}</span>
-              <p className="personal-project-category">{project.category}</p>
-              <h3>{project.name}</h3>
-              <p className="personal-project-description">{project.description}</p>
-              <a href={project.href} target="_blank" rel="noreferrer">{project.label} <span aria-hidden="true">↗</span></a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="personal-contact" id="contacto">
-        <p className="personal-eyebrow">04 / CONTACTO</p>
-        <h2>¿Construimos<br /><span>algo valioso?</span></h2>
-        <p>Abierto a conversar sobre ingeniería de software, productos digitales, IA aplicada y oportunidades profesionales.</p>
-        <div className="personal-actions">
-          <a className="personal-button primary" href="mailto:carlos.f.martinez.s@gmail.com">carlos.f.martinez.s@gmail.com <span aria-hidden="true">↗</span></a>
-          <a className="personal-button secondary" href="https://www.linkedin.com/in/cfms" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </section>
-
-      <footer className="personal-footer">
-        <span>© {new Date().getFullYear()} Carlos Martínez Sánchez</span>
-        <span>Diseñado y desarrollado con intención.</span>
-        <a href="#inicio">Volver arriba ↑</a>
-      </footer>
-    </main>
+        </section>
+      </main>
+      <Footer />
+      <ScrollTop />
+    </div>
   );
 }
