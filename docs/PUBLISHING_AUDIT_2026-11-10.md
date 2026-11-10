@@ -1,7 +1,7 @@
 # Portfolio — Visual assets & publication audit (2026-11-10)
 
 > Scope: public portfolio and the ADÜMÜN projects showcased there. This is not an inventory of every internal repository.
-> Runtime HTTP smoke tests are still pending. The owner confirmed the ADÜMÜN Pages URL convention and the Lab Lights URL; the other three game repositories have explicit Pages deployment workflows.
+> Runtime HTTP smoke tests are still pending because this execution environment could not resolve DNS for `adumun.github.io`. The owner confirmed the ADÜMÜN Pages URL convention and the Lab Lights URL; the other three game repositories have explicit Pages deployment workflows. A dependency-free smoke-test script is included at `scripts/check-portfolio-routes.mjs`.
 
 ## Confirmed defects and fixes
 
