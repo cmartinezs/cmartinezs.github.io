@@ -60,13 +60,13 @@ function GameArtwork({ id }: { id: GameProject["id"] }) {
 }
 
 export function GamePreviewCard({ game }: { game: GameProject }) {
-  const hasVerifiedDemo = Boolean(game.demoUrl);
+  const hasDemoUrl = Boolean(game.demoUrl);
   return (
     <article className="glass-card overflow-hidden flex flex-col" style={{ padding: 0 }}>
       <div className={styles.artwork + " " + styles[game.id.replace(/-/g, "_")]}>
         <div className={styles.topline}>
           <span>{game.owner} / DIGITAL LAB</span>
-          <span>{hasVerifiedDemo ? "DEMO DISPONIBLE" : "CONCEPTO VISUAL"}</span>
+          <span>{game.demoStatus === "owner-confirmed" ? "DEMO CONFIRMADA" : hasDemoUrl ? "PAGES CONFIGURADO" : "CONCEPTO VISUAL"}</span>
         </div>
         <div className={styles.visual}>
           <GameArtwork id={game.id} />
