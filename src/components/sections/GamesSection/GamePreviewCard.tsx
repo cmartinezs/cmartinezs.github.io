@@ -66,7 +66,7 @@ export function GamePreviewCard({ game }: { game: GameProject }) {
       <div className={styles.artwork + " " + styles[game.id.replace(/-/g, "_")]}>
         <div className={styles.topline}>
           <span>{game.owner} / DIGITAL LAB</span>
-          <span>{game.demoStatus === "owner-confirmed" ? "DEMO CONFIRMADA" : hasDemoUrl ? "PAGES CONFIGURADO" : "CONCEPTO VISUAL"}</span>
+          <span>{game.demoStatus === "owner-confirmed" ? "DEMO CONFIRMADA" : game.demoStatus === "publication-pending" ? "PUBLICACIÓN PENDIENTE" : hasDemoUrl ? "DEMO POR VALIDAR" : "CONCEPTO VISUAL"}</span>
         </div>
         <div className={styles.visual}>
           <GameArtwork id={game.id} />
@@ -100,7 +100,7 @@ export function GamePreviewCard({ game }: { game: GameProject }) {
               Ver código en ADÜMÜN
             </Link>
           ) : (
-            <p className={styles.availability}>Demo pública pendiente de verificación</p>
+            <p className={styles.availability}>Demo pública no disponible actualmente</p>
           )}
         </div>
       </div>
