@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://cmartinezs.github.io";
-const AUTHOR = "Carlos Martínez";
+const AUTHOR = "Carlos Martínez Sánchez";
 const BASE_TITLE = "Carlos Martínez";
 
 export function buildMetadata({
@@ -44,21 +44,27 @@ export const personJsonLd = {
   "@type": "Person",
   name: AUTHOR,
   url: BASE_URL,
-  jobTitle: "Desarrollador Backend Senior · Arquitecto de Software · Docente Técnico",
-  sameAs: ["https://github.com/cmartinezs", "https://www.linkedin.com/in/cfms"],
+  jobTitle: "Senior Software Engineer",
+  description:
+    "Ingeniero de software senior y docente de informática con más de 15 años de experiencia en backend, arquitectura, sistemas distribuidos e IA aplicada.",
+  sameAs: [
+    "https://github.com/cmartinezs",
+    "https://www.linkedin.com/in/cfms",
+  ],
   knowsAbout: [
+    "Software Engineering",
     "Backend Development",
-    "Software Architecture",
     "Java",
     "Spring Boot",
     "REST APIs",
-    "Clean Architecture",
-    "Technical Leadership",
-    "Technical Education",
-    "PostgreSQL",
-    "Docker",
     "Microservices",
-    "React",
-    "Kotlin",
+    "Distributed Systems",
+    "Apache Kafka",
+    "Software Architecture",
+    "Cloud Computing",
+    "Docker",
+    "Kubernetes",
+    "Applied Artificial Intelligence",
+    "Technical Education",
   ],
 };
