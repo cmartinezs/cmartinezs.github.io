@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Read-only smoke test for the personal portfolio and its public project demos.
+ * Read-only smoke test for the personal portfolio and publicly confirmed project demos.
  * Usage: node scripts/check-portfolio-routes.mjs [portfolio-base-url]
  * Node.js >= 20. No third-party dependencies, browser or API credentials.
  */
@@ -12,10 +12,8 @@ const paths = [
 ];
 const demos = [
   { label: "Lab Lights", url: "https://adumun.github.io/lab-lights-web/" },
-  { label: "Starborne Voyager", url: "https://adumun.github.io/starborne-voyager/" },
-  { label: "Web Game Prototypes", url: "https://adumun.github.io/web-game-prototypes/" },
-  { label: "Neon Pursuit", url: "https://adumun.github.io/neon-pursuit/" },
 ];
+const pendingDemos = ["Starborne Voyager", "Web Game Prototypes", "Neon Pursuit"];
 
 async function check(label, url) {
   try {
@@ -45,6 +43,7 @@ for (const demo of demos) results.push(await check(`demo ${demo.label}`, demo.ur
 for (const item of results) {
   console.log([item.ok ? "PASS" : "FAIL", item.status, item.label, item.note || item.title].join(" | "));
 }
+for (const name of pendingDemos) console.log(`SKIP | ${name} | public Pages URL not verified; demo link intentionally disabled`);
 const passed = results.filter((r) => r.ok).length;
-console.log(`\n${passed}/${results.length} URLs passed.`);
+console.log(`\n${passed}/${results.length} checked URLs passed; ${pendingDemos.length} demos intentionally skipped pending publication.`);
 if (results.some((r) => !r.ok)) process.exitCode = 1;
