@@ -145,8 +145,8 @@ export default function EspecialidadesPage() {
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
               <Link className="card-link-custom" href="/recursos-contacto/#contacto">
-                Solicitar revisión de arquitectura →
-              </Link>
+                Solicitar revisión de arquitectura
+</Link>
             </div>
           </div>
         </section>
