@@ -5,7 +5,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { GlassCard } from "@/components/sub-components/GlassCard";
 
 export const metadata: Metadata = buildMetadata({
   title: "Ingeniería, innovación, docencia y productos",
