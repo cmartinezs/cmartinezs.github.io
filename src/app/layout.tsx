@@ -6,27 +6,25 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["500", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Carlos Martínez | Software Developer & Docente",
+    default: "Carlos Martínez | Senior Software Engineer",
     template: "%s | Carlos Martínez",
   },
   description:
-    "Carlos Martínez, software developer backend specialist, docente universitario y creador de soluciones con IA. 15+ años de experiencia en Java, Spring Boot, React, Kotlin.",
+    "Senior Software Engineer en Chile. Más de 15 años construyendo software backend, APIs, sistemas distribuidos y productos digitales. Java, Spring Boot, cloud e IA aplicada.",
   metadataBase: new URL("https://cmartinezs.github.io"),
   robots: { index: true, follow: true },
-  authors: [{ name: "Carlos Martínez" }],
+  authors: [{ name: "Carlos Martínez Sánchez" }],
   openGraph: {
     siteName: "Carlos Martínez",
     locale: "es_CL",
@@ -40,20 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
-      data-scroll-behavior="smooth"
-    >
+    <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
