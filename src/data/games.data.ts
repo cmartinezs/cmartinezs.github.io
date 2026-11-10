@@ -1,7 +1,7 @@
 /**
  * Public portfolio catalogue, not the authoritative product registry.
- * Never infer a playable URL from a repository name or owner.
- * A demo is linked only once its deployed URL has been verified.
+ * ADÜMÜN GitHub Pages follow https://adumun.github.io/<repository-name>.
+ * Add a demoUrl only when publication for that repository is confirmed.
  */
 export interface GameProject {
   id: string;
